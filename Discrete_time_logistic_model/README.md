@@ -1,0 +1,340 @@
+README
+================
+
+## Discrete time logistic model for population growth.
+
+#### Notations:
+
+- $N_t$ : Population size at time $t$
+- $B_t$ : Total number of births in interval $(t, t+1)$
+- $D_t$ : Total number of deaths in interval $(t, t+1)$
+  - In this model $D_t = N_t$.
+- $b_t = B_t / N_t$ := Per capita birth rate (:= expected litter size
+  per individual ; see last section)
+- $d_t = D_t / N_t$ := Per capita death rate
+- $R_t = 1 + b_t - d_t$ := Growth rate
+- $X_t = N_t/K$
+- Note: $N_t,  B_t, D_t, b_t, R_t, X_t > 0$
+- ***NBS*** := No biological sense.
+
+------------------------------------------------------------------------
+
+This is one of the simplest(!) model due to many underlying assumptions.
+
+#### Assumptions:
+
+- Time is discrete. and T is a time step.
+
+  - We only know population size at time $0, T, 2T...$
+  - We denote $t+T$ by $t+1$, and $t = 4$ means time $4T$.
+
+- Non overlapping generations.
+
+  - Each time step $T$ is a generation time.
+  - i.e. All individual at time $t$, reproduce and immediately die at
+    $t+T$.
+  - No withing step reproduction of off springs.
+  - So individual at $t$ won’t be counted again at $t+T$ ; $d_t = 1$
+
+- Population is Homogeneous.
+
+  - No age, sex, spatial structures.
+  - All offspring survives and reproduce with same expected fecundity.
+
+- Population is closed.
+
+  - Population change occur only due to death and births.
+  - No immigration, no emigration.
+
+- Logistic growth
+
+  - Growth rate $R_t$ decrease linearly with time.
+
+- **Mean field**
+
+  - $N_t$ is very large
+    <sub>(So we can apply law of large numbers to make underlying distribution structure immaterial).</sub>
+
+  <!-- -->
+
+  - $N_t$ represents **expected** population at time $t$, so
+    $N_t \in \mathbb{R}_{\ge 0}$
+
+  - Similarly $R_t$ is **expected** per capita growth rate at time $t$.
+    and $R_t \in \mathbb{R}_{\ge 0}$
+
+  - See last section
+    `Stochasticity and real world interpretations of the model` for more
+    details about underlying distributions and interpretations.
+
+------------------------------------------------------------------------
+
+#### Logistic model:
+
+If we assume there are limited resources in the closed ecosystem, then
+larger the population, more the fights for resources; resulting in the
+high number of deaths and less number of births. This indicates that the
+growth rate is a decreasing function of population size.
+
+Let’s assume simple linear relation between $R_t$ and $N_t$:
+$$  R_t = R_m (1 - N_t/K) $$ Here, at $N_t = 0$, $R_t$ attains the
+non-negative maxima denoted by $R_m$ and in this model N_t can not grow
+beyond a point when $R_t = 0$, here $K$ is maximum value $N_t$ can
+attain.
+
+Therefore we get the following population growth equation:
+
+$$N_{t+1} = R_m N_t (1 - N_t / K) $$ We divide both side by $K$ to
+normalize $N_t$ to bound it in the interval $[0, 1]$. And let
+$X_t = N_t/ K$ : = Normalized population. So, we get:
+$$X_{t+1} = R_m X_t (1-X_t)$$
+
+Note :
+
+- For this model we have to restrict $0 \le R_m \le 4$ otherwise
+  $0 \le X_t \le 1$ may not hold for all $t$, and hence ***NBS***.
+
+- From assumption of Non overlapping generations we have $b_t = R_t$
+
+- Due to mean field assumption we don’t have to restrict $N_t$ to
+  $\mathbb{Z}_{\ge 0}$ for sake of biological meaning.
+
+------------------------------------------------------------------------
+
+#### Example Trajectories:
+
+- you can play with values of R_m to check for different R_m.
+
+``` r
+plot_each_R_m(R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6, 4))
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-1-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-1-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-1-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-1-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-1-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-1-6.png" alt="" width="50%" />
+
+#### Observation:
+
+- For $R_m \le 1$, $X_t \rightarrow 0$, $\forall X_0$.
+- For $R_m < 3$ $X_t$ converges to $X^*$, $\forall X_0$ except
+  $X_0 = 0, 1$,
+- For $3 \lt R_m \lt 3.44$ population oscillates between 2 points.
+- For $3.45 \lt R_m \lt 3.5$ oscillates between 4 points.
+- For $3.5 \lt R_m$ it become chaotic and unpredictable.
+
+------------------------------------------------------------------------
+
+#### Equilibrium/ fixed point : $X^*$
+
+Population size, if attained, stays constant over all the following
+generations.
+
+> Let **E** be state space consisting of all population sizes, and **f**
+> be evolution function (i.e. flow) then $X_{t+1} = f(X_t)$. And $X^*$
+> is a fixed point/equilibrium if $X^* = f(X^*)$.
+
+$$\begin{aligned}
+& X^*= R_m X^*(1 - X^*) \\
+& \\
+\text{Positive Solutions:}\\
+& \text{a) } X^* = 0  & \text{for } R_m \in [ 0, 4] \\
+& \text{b) } X^* = 1 - \frac{1}{R_m} & \text{for } R_m \in [1, 4]
+\end{aligned}$$
+
+``` r
+plot_eqb_curve()
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-2-1.png" alt="" width="50%" />
+
+------------------------------------------------------------------------
+
+### Stability of equilibrium:
+
+Small perturbation to $X^*$ stays small and eventually dies out over
+time.
+
+> <u>**Asymptotically stable:**</u>
+>
+> Let $X^*$ be fixed point of **f**, if $\forall \epsilon \gt 0$ ,
+> $\exists \delta \gt 0$ s.t.
+> $$ |X_0 - X^* | \lt \delta \implies |X_n - X^*| \lt \epsilon, \forall n \ge 0 $$
+>
+> and $\exists \delta_0 \gt 0$ s.t
+> $$|X_0 - X^* | \lt \delta_0 \implies X_n \rightarrow X^*$$
+
+> <u>**Linear stability test:**</u>
+>
+> Let $f : E \rightarrow E$ be evolution function where $E$ is
+> $\mathbb{R}^+$. And let $f$ be $C^1$ near fixed point $X^*$, then
+> $$\begin{aligned} |f'( X^* ) | \lt 1 & \implies X^* \text{ is asymptotically stable. } \\ |f'(X^) | \gt 1 & \implies X^* \text{ is unstable.} \end{aligned} $$
+
+#### Observations:
+
+- For $R_m \le 1$ we have stable equilibrium at $0$.
+- For $R_m \in (1, 2]$ we have unstable equilibrium at $0$.
+- For $1 \lt R_m \lt 3$ gives stable equilibrium at $(1 - 1/R_m)$.
+- For $R_m = 3$, stability undetermined.
+
+------------------------------------------------------------------------
+
+#### Bifurcation:
+
+> <u>**Attractor points of**$\{X_n\}$ :</u> we plot subsequential limit
+> points of sequence of population size time series $X_n$. for given
+> $R_m$ set of attractor points could be single point where the orbit
+> converges, finitely many points on a periodic cycle, or a
+> continuum/Cantor-like set under chaos.
+
+> <u>**Bifurcation diagram (discrete case)**</u> : For each $R_m$ we
+> plotted last $200$ values of $X_t$. i.e.values from
+> $\phi_{800}(0.1; R_m)$ to $\phi_{1000}(0.1; R_m)$ against each $R_m$.
+>
+> - you can play with values of $x_0$
+
+``` r
+Plot_Bifurcation(x_0 = 0.1)
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" alt="" width="50%" />
+
+------------------------------------------------------------------------
+
+#### Determinism, Robustness
+
+- Logistic model is completely deterministic. No stochastic elements
+  involved (`This is not so maybe concluded from last section)`.
+
+- Model is robust except at the bifurcation points. (trivial)
+
+  - Robustness (or its loss, at a bifurcation) is what early-warning
+    signals detect.
+
+------------------------------------------------------------------------
+
+#### Predictability
+
+Check `predictability of model.R` for simulation.
+
+- we have computationally checked the for error values
+  $\delta(0) = 0.1, 0.01, 0.00001$
+
+  - you can check for multiple values by just changing `error` vector in
+    the function input.
+
+  - `Plot_error_trajectories(dynamic function, initial states, parameter values, time step, error vector)` -
+    you can change input variables and play around with any discrete
+    time dynamic function to see how they respond to errors.
+
+- Evolution of error in discrete logistic model:
+
+  - here $\delta(t) \text{ is relabeld as } E_t$
+
+``` r
+Plot_error_trajectories(X_0_list = c(0.1), R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6, 4), t= 1:100, eps= c(0.1, 0.01, 0.00001))
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-6.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-7.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-8.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-9.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-10.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-11.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-12.png" alt="" width="50%" />
+
+#### Observation:
+
+- For $R_m \lt 3$ we have stable equilibrium i.e. fixed point Attractor
+  and hence population growth is completely predictable.
+  ($\lambda \lt 0$) and basin of attractor is whole set $(0, 1)$ except
+  $x_0 = 0, 1$.
+
+- For $3 \lt R_m \lt 3.5$ we have oscillating population i.e limit cycle
+  Attractor and we can see that errors are showing phase drift, so
+  population growth is predictable up to phase drift $(\lambda = 0)$
+
+- For $R_m >3$ we have chaos in the system and population is
+  unpredictable.
+
+- Note: For $R_m = 3.6$ in graph of $E_t$, Error trajectory of
+  $\delta(0) = 0.00001$`red` is near zero for $t \lt \approx 25$ ; which
+  can be seen as a predictability time horizon where error
+  $E_t \lt \varepsilon_\text{tol}$
+
+------------------------------------------------------------------------
+
+### install.packages(“styler”)Stochasticity and real world interpretation of the model:
+
+- Whenever we take $R_t$ linearly decreasing with increasing $N_t$,
+  values of $R_t$ lands on many fractional numbers or even irrational
+  numbers (but computationally impossible). These fractional values of
+  $R_t$ invokes non-integer population sizes; which makes No biological
+  sense as population must be an integer. And therefore we need to
+  summon randomness to handle it.
+
+- We can not avoid randomness even when formulation is completely
+  deterministic.
+
+- Let per capita birth rate $b_t = 3$ ; think about what does it mean?
+  Each individual gives $3$ litters between $(t, t+1)$ ? But even when
+  half population have $6$ litters and half have none, we still get
+  $b_t = 3$. So, we can have different distribution for given $b_t$ or
+  even $N_t$ for that matter.
+
+- Let’s consider strictly integer population size
+  $N_t \in \mathbb{Z}_{\ge 0}$ with per capita birth rate
+  $b_t \in \mathbb{R}$ and suppose each individual $i$ may have any
+  number of litter size. So Let $\Omega_i = \{0, 1, 2,... \}$ be that
+  sample space and $X_i : \Omega_i \to \mathbb{R}$ be
+  $\text{Poisson}(b_t)$ random variable denoting Numbers of litter of
+  $i$-th individual (you may choose any other distribution, Negative
+  binomial is a good choice as it’s most close to reality). Here $b_t$
+  can be interpret as expected litter size for each individual. I.e. if
+  you re-run the experiment with same conditions for large number of
+  times then the average the litter size = $b_t$ and probability of
+  having $k$ litter is given by PMF
+  $P(X_i = k) = e^{-b_t} \frac{b_t^k}{k!}$, further we let
+  $S = \sum_{i =1}^{N_t} X_i$ be random variable denoting total Number
+  of births in population and since $\{X_i\}$ are iid
+  $\text{Poisson}(b_t)$, $S \sim \text{Poisson}(N_t \cdot b_t)$. And
+  since $d_t = 1$, $N_{t+1} = S$ , So $N_{t+1}$ is a random variable,
+  that takes strictly integer values; with poisson distribution and
+  expected value $E(N_{t+1}) =N_t\cdot b_t$.
+
+- To make our life simple, we take assumption that $N_t$ **is large, So
+  We can summon LLN and therefore**
+  $$N_{t+1} \approx E(N_{t+1}) =N_t\cdot b_t$$
+
+  - I.e. realized per-capita growth rate converges to the parameter
+    $b_t$. This justifies that stochastic branching process can be
+    treated as deterministic recursion $N_{t+1}=N_tb_t$.​
+  - No matter what underlying distributions is as long as $X_i$ are
+    independent, from central limit theorem we recover the normal
+    distribution as $N_t$ is large. So deterministic model still works
+    for large $N_t$.
+
+<!-- -->
+
+- Note : Near extinction points, when $N_t$ is small, $N_{t+1}=N_tb_t$
+  is no longer even approximately valid and we need to treat
+  stochasticity carefully.
+
+  In `Integer_realization_of_mean_growth.R` I tried to create logistic
+  model with taking $N_t$ as integer values by realizing it using
+  different well known distributions to see how population dynamics
+  works. Here are some graphs for
+  $N_{t+1} \sim \text{Poisson}(R_t \cdot N_t)$. You can play with values
+  and distributions {“poisson”, “negbinom”, “normal”, “none”} .
+
+  Note: for ‘negbinom’, i guess due to high dispersion value which is set at 1 in the code, and since population can no recover from 0, graphs eventually end up at
+  0
+
+``` r
+plot_each_R_m_int(N_0_list = c(100, 200, 500, 800), R_m_list = c(0.5, 1.5, 2.5, 3.2,
+              3.6, 3.9), K = 1000, time_steps = 100, distribution = "poisson")
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-5-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-5-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-5-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-5-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-5-6.png" alt="" width="50%" />
+
+``` r
+Plot_Bifurcation_int(N_0 = 100, R_m_list = seq(0, 3.9, 0.01), K = 1000, time_steps = 
+                   1000, distribution = "poisson")
+```
+
+<img src="README_files/figure-gfm/unnamed-chunk-6-1.png" alt="" width="50%" />
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
