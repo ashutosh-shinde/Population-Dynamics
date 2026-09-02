@@ -1,4 +1,22 @@
-.Rproj.user
+# R history / workspace
 .Rhistory
 .RData
 .Ruserdata
+
+# RStudio
+*.Rproj.user/
+
+# macOS
+.DS_Store
+
+# Generated HTML files
+*.html
+
+# Temporary files
+*.tmp
+*.bak
+
+# renv generated directories
+renv/library/
+renv/staging/
+renv/sandbox/
