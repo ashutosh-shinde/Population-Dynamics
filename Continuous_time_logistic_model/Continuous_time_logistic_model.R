@@ -19,7 +19,7 @@ logistic_growth = function(x0, r, delta_t, t_max) {
 }
 
 
-result = logistic_growth(x0 = 0.23, r = 0.11, delta_t = 0.01, t_max = 50
-                         )
-#plot(result$time, result$x, type = "l", xlab = "Time", ylab =
+#trajectory = logistic_growth(x0 = 0.23, r = 0.11, delta_t = 0.01,
+#                             t_max = 50)
+#plot(trajectory$time, trajectory$x, type = "l", xlab = "Time", ylab =
 #    "Population density (x)", main = "Continuous Time Logistic Growth")
