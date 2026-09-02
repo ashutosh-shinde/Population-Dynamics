@@ -19,21 +19,9 @@ source files it imports.
 
 #### Repository structure
 
-$$\begin{array}{c}
-\boxed{\text{Discrete time logistic growth model}}
-\\[8pt]
-\downarrow
-\\[8pt]
-\boxed{\text{Continuous time logistic growth model}}
-\\[8pt]
-\downarrow
-\\[8pt]
-\boxed{\text{Holling functional - harvesting models}}
-\\[8pt]
-\downarrow
-\\[8pt]
-\boxed{\text{Two Species - population models}}
-\end{array}$$
+\$\$
+
+\end{array} \$\$
 
 #### On the theory:
 
