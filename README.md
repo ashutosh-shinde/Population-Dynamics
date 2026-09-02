@@ -43,20 +43,19 @@ ambiguous, it likely is; I’d welcome corrections.
 
 ### Dynamical System
 
-##### State Space (Phase Space) :
-
+> **State Space (Phase Space) :**
+>
 > The set of all possible values of a system’s state variables.
-
-*Ex.* State variable := Population size.
-
-- $E \subset \mathbb{R}^n$
-
-- Single species : $E := \mathbb{R}_{\ge 0}$
-
-- $n$ species: $E := \mathbb{R}_{\ge 0}^n$
-
-<sub>Note: Why not $E = \mathbb{Z}_{\ge 0}$? refer last section in
-`discrete_time_logistic_model`.</sub>
+>
+> *Ex.* State variable := Population size.
+>
+> - $E \subset \mathbb{R}^n$ - Single species :
+>   $E := \mathbb{R}_{\ge 0}$
+>
+> - $n$ species: $E := \mathbb{R}_{\ge 0}^n$
+>
+>   <sub>Note: Why not $E = \mathbb{Z}_{\ge 0}$? refer last section in
+>   `discrete_time_logistic_model`.</sub>
 
 ##### Dynamical functions :
 
@@ -114,13 +113,11 @@ called parameter space.
 
 ##### Fixed point / equilibrium :
 
-:
-
     A state $p^*$ that doesn't change under the dynamics.
 
-    :   Discrete: $p^* \in E$ s.t. $F(p^*) = p^*$.
+    Discrete: $p^* \in E$ s.t. $F(p^*) = p^*$.
 
-    :   Continuous: $p^* \in E$ s.t. $f(p^*) = 0$.
+    Continuous: $p^* \in E$ s.t. $f(p^*) = 0$.
 
 ##### Stability of the Equilibrium :
 
