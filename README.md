@@ -179,9 +179,9 @@ $\omega -$**limit set of** $p_0$ **:**
 
 > Set of all subsequential limits of the forward orbit of $p_0$.
 >
-> $\omega (p_0) = \{ p \in E \ : \ \lim_{t_k \rightarrow \infty}
+> $\omega (p_0) = \\{ p \in E \ : \ \lim_{t_k \rightarrow \infty}
 >     \omega_{t_k}(p_0)= p, \ \text{ for any subsequence } (t_k)_{k \ge 0}
->     \subset T \}$
+>     \subset T \\}$
 
 **Attracting Set** $A(\mu)$ **:**
 
