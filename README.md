@@ -1,5 +1,4 @@
-POPULATION DYNAMICS
-================
+# POPULATION DYNAMICS
 
 > **Mathematical theory + computational simulations of population
 > dynamics**
@@ -61,10 +60,9 @@ ambiguous, it likely is; I’d welcome corrections.
 
 **Dynamical functions :**
 
-Function that tells you the next state given the current state.
+> Function that tells you the next state given the current state.
 
-- In population dynamics; $T = \mathbb{Z}_{\ge 0}$ for discrete time,
-  and $T = [0, \infty)$ for continuous time.
+| In population dynamics; $T = \mathbb{Z}_{\ge 0}$ for discrete time, and $T = [0, \infty)$ for continuous time.
 
 ##### Evolution function (discrete time) :
 
@@ -114,121 +112,129 @@ called parameter space.
 
 ##### Fixed point / equilibrium :
 
-    A state $p^*$ that doesn't change under the dynamics.
+```         
+A state $p^*$ that doesn't change under the dynamics.
 
-    Discrete: $p^* \in E$ s.t. $F(p^*) = p^*$.
+Discrete: $p^* \in E$ s.t. $F(p^*) = p^*$.
 
-    Continuous: $p^* \in E$ s.t. $f(p^*) = 0$.
+Continuous: $p^* \in E$ s.t. $f(p^*) = 0$.
+```
 
 ##### Stability of the Equilibrium :
 
 : We have two definitions of stability, the latter being the stronger
 one.
 
-    Lyapunov stable : Family $\{ \phi_t \}$ is Equicontinuous at point $p^*$.
+```         
+Lyapunov stable : Family $\{ \phi_t \}$ is Equicontinuous at point $p^*$.
 
-    :   $\forall \varepsilon \gt 0, \exists \delta \gt 0$ s.t.
-        $\boxed{ |p_0 - p^* | \lt \delta \implies | p_t - p^* | \lt \varepsilon,
-        \forall t
-         \ge 0}$
+:   $\forall \varepsilon \gt 0, \exists \delta \gt 0$ s.t.
+    $\boxed{ |p_0 - p^* | \lt \delta \implies | p_t - p^* | \lt \varepsilon,
+    \forall t
+     \ge 0}$
 
-    :   Small perturbation to $p^*$ stays small over the time.
+:   Small perturbation to $p^*$ stays small over the time.
 
-    **Asymptotically stable :** Family $\{ \phi_t \}$ is Equicontinuous at point $p^*$ and converges pointwise to $p^*$.
+**Asymptotically stable :** Family $\{ \phi_t \}$ is Equicontinuous at point $p^*$ and converges pointwise to $p^*$.
 
-    :   $\boxed{\exists \delta_0 \ge 0 \text{ s.t. } |p_0 - p^* | \lt \delta_0
-        \implies p_t \to p^*}$
+:   $\boxed{\exists \delta_0 \ge 0 \text{ s.t. } |p_0 - p^* | \lt \delta_0
+    \implies p_t \to p^*}$
 
-    :   Small perturbation to $p^*$ stays small and eventually dies out
-        over the time.
+:   Small perturbation to $p^*$ stays small and eventually dies out
+    over the time.
 
-    :   Equilibrium is local attractor.
+:   Equilibrium is local attractor.
+```
 
 ##### Linear stability test :
 
 :
 
-    Discrete, $E \subset \mathbb{R}$
+```         
+Discrete, $E \subset \mathbb{R}$
 
-    :   Let $F : E \to E$ be $C^1$ near fixed point $p^*$, then
-        $\begin{aligned}
-        |F'(p^*)| \lt 1 &\implies p^* \text{ asymptotically stable}\\
-        |F'(p^*)| \gt 1 &\implies p^* \text{ unstable} \\
-        |F'(p^*)| = 1 &\implies  \text{ Inconclusive (possibly bifurcation 
-        point)}
-        \end{aligned}$\$
+:   Let $F : E \to E$ be $C^1$ near fixed point $p^*$, then
+    $\begin{aligned}
+    |F'(p^*)| \lt 1 &\implies p^* \text{ asymptotically stable}\\
+    |F'(p^*)| \gt 1 &\implies p^* \text{ unstable} \\
+    |F'(p^*)| = 1 &\implies  \text{ Inconclusive (possibly bifurcation 
+    point)}
+    \end{aligned}$\$
 
-    Continuous, $E \subset \mathbb{R}^n$
+Continuous, $E \subset \mathbb{R}^n$
 
-    :   Let $J := Df(p^*)$ (Jacobian) and $\lambda_i$ be eigenvalues of
-        $J$, then$$\begin{aligned}
-        &\text{Re}(\lambda_i) \lt 0, \ \ \text{for all } \lambda_i& \implies &
-        p^* \text{ asymptotically stable} \\
-        &\text{Re}(\lambda_i) \lt 0, \ \ \text{for any } \lambda_i&  \implies &
-        p^* \text{ unstable}\\
-        &\text{Re}(\lambda_i) = 0, \ \ \text{for all } \lambda_i& \implies &
-        \text{Inconclusive (possibly bifurcation point)}
-        \end{aligned}$$
+:   Let $J := Df(p^*)$ (Jacobian) and $\lambda_i$ be eigenvalues of
+    $J$, then$$\begin{aligned}
+    &\text{Re}(\lambda_i) \lt 0, \ \ \text{for all } \lambda_i& \implies &
+    p^* \text{ asymptotically stable} \\
+    &\text{Re}(\lambda_i) \lt 0, \ \ \text{for any } \lambda_i&  \implies &
+    p^* \text{ unstable}\\
+    &\text{Re}(\lambda_i) = 0, \ \ \text{for all } \lambda_i& \implies &
+    \text{Inconclusive (possibly bifurcation point)}
+    \end{aligned}$$
+```
 
 ##### Attractor :
 
 :
 
-    $\omega -$limit set of $p_0$
+```         
+$\omega -$limit set of $p_0$
 
-    :   Set of all subsequential limits of the forward orbit of $p_0$.
+:   Set of all subsequential limits of the forward orbit of $p_0$.
 
-    :   $\omega (p_0) = \{ p \in E \ : \ \lim_{t_k \rightarrow \infty}
-        \omega_{t_k}(p_0)= p, \ \text{ for any subsequence } (t_k)_{k \ge 0}
-        \subset T \}$
+:   $\omega (p_0) = \{ p \in E \ : \ \lim_{t_k \rightarrow \infty}
+    \omega_{t_k}(p_0)= p, \ \text{ for any subsequence } (t_k)_{k \ge 0}
+    \subset T \}$
 
-    Attracting Set $A(\mu)$
+Attracting Set $A(\mu)$
 
-    :   A non empty closed set $A = A(\mu) \subset E$ is an attracting
-        set if $$\begin{aligned}
-        a)& \ A \text{ is invariant under } \phi_t \text{ i.e. } \phi_t (A) = A,
-        \forall t. \\ 
-        b)& \ \exists \text{ open } U, A \subset U \subset E, \text{ s.t. }     
-        \text{dist}( \phi_t (p_0), A) \rightarrow 0 \text{ as } t \rightarrow 0,
-        \ \forall p_0 \in U. \\
-        c)& \ \forall \varepsilon \gt 0, \exists \delta \gt 0 \text{ s.t. } 
-        \text{dist}(p_0, A) \lt \delta \implies \text{dist}(\phi_t(p_0), A) \lt
-        \varepsilon, \ \forall t \ge 0.
-        \end{aligned}$$
+:   A non empty closed set $A = A(\mu) \subset E$ is an attracting
+    set if $$\begin{aligned}
+    a)& \ A \text{ is invariant under } \phi_t \text{ i.e. } \phi_t (A) = A,
+    \forall t. \\ 
+    b)& \ \exists \text{ open } U, A \subset U \subset E, \text{ s.t. }     
+    \text{dist}( \phi_t (p_0), A) \rightarrow 0 \text{ as } t \rightarrow 0,
+    \ \forall p_0 \in U. \\
+    c)& \ \forall \varepsilon \gt 0, \exists \delta \gt 0 \text{ s.t. } 
+    \text{dist}(p_0, A) \lt \delta \implies \text{dist}(\phi_t(p_0), A) \lt
+    \varepsilon, \ \forall t \ge 0.
+    \end{aligned}$$
 
-    :   $A(\mu)$ is an attractor if it is closed, invariant,
-        Asymptotically stable (i.e. attracting and Lyapunov stable) and
-        minimal set of such kind (no closed subset of A is attractor).
+:   $A(\mu)$ is an attractor if it is closed, invariant,
+    Asymptotically stable (i.e. attracting and Lyapunov stable) and
+    minimal set of such kind (no closed subset of A is attractor).
 
-    :   Here $\mu$ is a parameter value of the dynamic system
-        $\dot x = f (x; \mu)$. For different $\mu$ we have may different
-        $A$, $U$ structure even when the dynamic function has same form.
+:   Here $\mu$ is a parameter value of the dynamic system
+    $\dot x = f (x; \mu)$. For different $\mu$ we have may different
+    $A$, $U$ structure even when the dynamic function has same form.
 
-    Basin of Attractor
+Basin of Attractor
 
-    :   The entire region of starting points that will eventually get
-        pulled into the attractor.
+:   The entire region of starting points that will eventually get
+    pulled into the attractor.
 
-    Attractor point
+Attractor point
 
-    :   $a \in A(\mu)$ is an attractor point.
+:   $a \in A(\mu)$ is an attractor point.
 
-        Note: each $a \in \omega(p_0)$ for some $p_0 \in U$ and for each
-        $p_0 \in U, \ \omega(p_0) \subset A$.
+    Note: each $a \in \omega(p_0)$ for some $p_0 \in U$ and for each
+    $p_0 \in U, \ \omega(p_0) \subset A$.
 
-    Types of attractors $A(\mu)$
+Types of attractors $A(\mu)$
 
-    :   Fixed point : $A = \{ p^* \}$ i.e. equilibrium.
+:   Fixed point : $A = \{ p^* \}$ i.e. equilibrium.
 
-    :   Periodic orbit : $A = \tau$ : closed curve with
-        $\phi_T (p) = p, \ \forall p \in \tau$ : prey predator cycle
-        etc.
+:   Periodic orbit : $A = \tau$ : closed curve with
+    $\phi_T (p) = p, \ \forall p \in \tau$ : prey predator cycle
+    etc.
 
-    :   Quasiperiodic attractor : oscillation with no exact period and
-        dense orbit in A.
+:   Quasiperiodic attractor : oscillation with no exact period and
+    dense orbit in A.
 
-    :   Chaotic attractor : bounded but unpredictable long-term
-        behavior.
+:   Chaotic attractor : bounded but unpredictable long-term
+    behavior.
+```
 
 ##### Bifurcation point :
 
@@ -247,11 +253,13 @@ orientation (time-direction).
 : A map of the system’s long-run states as a control parameter varies,
 marking where regime shifts occur.
 
-    $\mathcal{B} := \{ (\mu, p) \in M \times E : p \in A(\mu) \}$
+```         
+$\mathcal{B} := \{ (\mu, p) \in M \times E : p \in A(\mu) \}$
 
-    :   Curves distinguished by stability : solid = attractor, dashed =
-        unstable invariant set. Plotted with $\mu$ on the x-axis and $p$
-        on y-axis.
+:   Curves distinguished by stability : solid = attractor, dashed =
+    unstable invariant set. Plotted with $\mu$ on the x-axis and $p$
+    on y-axis.
+```
 
 ------------------------------------------------------------------------
 
@@ -285,7 +293,7 @@ exponent.
 we Define error at time $t$ as
 $$\delta(t) := \phi_t(p_0 + \delta_0) - \phi_t(p_0)$$
 
-$(\varepsilon_{\text{tol}}, t^*)-$predictable at $p_0$  
+$(\varepsilon_{\text{tol}}, t^*)-$predictable at $p_0$\
 Let’s Fix tolerance $\varepsilon_\text{tol}>0$ and predictability
 horizon $t^*>0$. Define the system is
 $(\varepsilon_\text{tol}, t^*)-predictable$ at $p_0$ if,
@@ -295,7 +303,7 @@ Measurement error smaller than some threshold $\xi$ ​ stays below the
 tolerance $\varepsilon_{\text{tol}}$​ throughout the entire window
 $[0,t^*]$.
 
-\##### Lyapunov exponent :  
+\##### Lyapunov exponent :\
 Lets assume $||\delta(t)|| \approx e^{\lambda t}||\delta(0)||$ (by
 linearization of first order taylor expansion (as $f$ is $C^1$) of $f$
 about $\phi_t(p_0)$.) This assumption is only valid on $[0, T]$ for $T$
@@ -304,27 +312,27 @@ not too large relative to $\ln(1/\|\delta(0)\|)$.
 Here $\lambda$ is called Lyapunov constant. but taking logarithm of both
 side we define it as:
 
-maximal Lyapunov exponent  
+maximal Lyapunov exponent\
 $$\lambda(p_0) := \lim_{t \to \infty} \lim_{|\delta_0| \to 0} \frac{1}
 {t} \ln{\frac{|\delta(t)|}{|\delta(0)|}}$$
 
 The limit $|\delta(0)| \to 0$ ensures validity of approximation at any
 time.
 
-Discrete time Lyapunov exponent  
+Discrete time Lyapunov exponent\
 $$\lambda(x_0) := \lim_{n \to \infty } \frac{1}{n} \sum_{i = 0}^{n-1} \ln{|F'(p_i)|} $$
 
-Lyapunov spectrum  
+Lyapunov spectrum\
 In $n$-dimensional phase space, we have $n$-basis directions along which
 we can make the perturbation in initial condition $p_0$ so we have $n$
 Lyapunov exponents $\{ \lambda_i \}_n$ for each basis direction. I will
 upload pdf regarding the choice of basis (which not even an fixed
 orthogonal basis as standard sense) . `Work in progress`
 
-Cases of $\lambda$  
+Cases of $\lambda$\
 - $\lambda \lt 0$ : exponential decay of error in long run; but still we
-  can have transient spikes at some finite t. This is exactly why
-  $\lambda \lt 0$ does not imply Lyapunov stability in general.
+can have transient spikes at some finite t. This is exactly why
+$\lambda \lt 0$ does not imply Lyapunov stability in general.
 
 - $\lambda = 0$ : linear/polynomial drift between trajectories
   i.e. phase/timing drift but no decay.
@@ -332,7 +340,7 @@ Cases of $\lambda$
 - $\lambda \gt 0$ : exponential growth of $\delta(t)$ (until gets
   bounded by some attractor structure)
 
-  Predictability horizon for $\lambda \gt 0$  
+  Predictability horizon for $\lambda \gt 0$\
   Let $\varepsilon_{\text{tol}}$ be fixed tolerance then for error
   $||\delta(t)|| \lt \varepsilon_\text{tol} \ \forall t \lt t^*$ where,
   $t^* = \frac{1}{\lambda} \ln \frac{\varepsilon_\text{tol} }{ \|\delta(0)\| }$
@@ -341,7 +349,7 @@ Cases of $\lambda$
   — they do not certify smooth monotonic growth up to $t^*$. So we may
   still have transient spikes even at $t \lt t^*$.
 
-\##### Attractor structure :  
+\##### Attractor structure :\
 For fixed $\mu$, $E$ decomposes as
 $E = \left(\bigsqcup_i U_i\right)\sqcup\Sigma$, : disjoint open basins
 $U_i$ of distinct minimal attractors $A_i(\mu)$ (possibly of different
