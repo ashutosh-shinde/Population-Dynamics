@@ -15,7 +15,7 @@ bifurcation diagrams etc. generated from the simulations.
 Every script can be downloaded and run directly in `R`, along with any
 source files it imports.
 
-\#———————————————————————-
+------------------------------------------------------------------------
 
 #### Repository structure
 
@@ -43,24 +43,25 @@ ambiguous, it likely is; I’d welcome corrections.
 
 ### Dynamical System
 
-> **State Space (Phase Space) :**
->
+**State Space (Phase Space) :**
+
 > The set of all possible values of a system’s state variables.
->
-> *Ex.* State variable := Population size.
+
+> <u>*Example:*</u> State variable := Population size.
 >
 > - $E \subset \mathbb{R}^n$ - Single species :
 >   $E := \mathbb{R}_{\ge 0}$
 >
+> <!-- -->
+>
 > - $n$ species: $E := \mathbb{R}_{\ge 0}^n$
 >
->   <sub>Note: Why not $E = \mathbb{Z}_{\ge 0}$? refer last section in
->   `discrete_time_logistic_model`.</sub>
+> <sub>Note: Why not $E = \mathbb{Z}_{\ge 0}$? refer last section in
+> `discrete_time_logistic_model`.</sub>
 
-##### Dynamical functions :
+**Dynamical functions :**
 
-<sub>Function that tells you the next state given the current
-state.</sub>
+Function that tells you the next state given the current state.
 
 - In population dynamics; $T = \mathbb{Z}_{\ge 0}$ for discrete time,
   and $T = [0, \infty)$ for continuous time.
