@@ -45,7 +45,7 @@ ambiguous, it likely is; I’d welcome corrections.
 
 ##### State Space (Phase Space) :
 
-*Def.* The set of all possible values of a system’s state variables.
+> The set of all possible values of a system’s state variables.
 
 *Ex.* State variable := Population size.
 
@@ -68,14 +68,14 @@ state.</sub>
 
 ##### Evolution function (discrete time) :
 
-*Def.* $F : E \to E$, s.t. $p_{t+1} = F(p_t)$ where $p_t$ is the
-system’s state at time $t \in \mathbb{Z}_{\ge 0}$.
+> $F : E \to E$, s.t. $p_{t+1} = F(p_t)$ where $p_t$ is the system’s
+> state at time $t \in \mathbb{Z}_{\ge 0}$.
 
 ##### Flow (discrete time) :
 
-*Def.* $\phi: T \times E \to E$, $(t, p) \rightarrow \phi_t(p)$ s.t.
-$\phi_t(p_0) := F^t(p_0)$ is defined as flow starting at state $p_0$.
-where $F^t := F \circ F \circ ... F, \text{ t-times}.$
+> $\phi: T \times E \to E$, $(t, p) \rightarrow \phi_t(p)$ s.t.
+> $\phi_t(p_0) := F^t(p_0)$ is defined as flow starting at state $p_0$.
+> where $F^t := F \circ F \circ ... F, \text{ t-times}.$
 
 ##### Vector field (continuous time)
 
