@@ -84,10 +84,15 @@ attain.
 
 Therefore we get the following population growth equation:
 
-$$N_{t+1} = R_m N_t (1 - N_t / K) $$ We divide both side by $K$ to
-normalize $N_t$ to bound it in the interval $[0, 1]$. And let
-$X_t = N_t/ K$ : = Normalized population. So, we get:
+$$N_{t+1} = R_m N_t \left( 1 - \frac{N_t}{K} \right) $$ 
+
+We divide both side by $K$ to normalize $N_t$ to bound it in the interval $[0, 1]$. 
+And let $X_t = \frac{N_t}{K}$ : = Normalized population.
+
+So, we get:
+
 $$X_{t+1} = R_m X_t (1-X_t)$$
+
 
 Note :
 
@@ -103,7 +108,7 @@ Note :
 
 #### Example Trajectories:
 
-- you can play with values of R_m to check for different R_m.
+- you can change with values of R_m to check for different R_m. (run README.Rmd file with source files)
 
 ``` r
 plot_each_R_m(R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6, 4))
@@ -129,15 +134,17 @@ generations.
 
 > Let **E** be state space consisting of all population sizes, and **f**
 > be evolution function (i.e. flow) then $X_{t+1} = f(X_t)$. And $X^*$
-> is a fixed point/equilibrium if $X^* = f(X^*)$.
+> is a fixed point/equilibrium if $X^\ast = f(X^\ast)$.
 
-$$\begin{aligned}
-& X^*= R_m X^*(1 - X^*) \\
+$$
+\begin{aligned}
+& X^\ast = R_m X^\ast (1 - X^\ast ) \\
 & \\
 \text{Positive Solutions:}\\
-& \text{a) } X^* = 0  & \text{for } R_m \in [ 0, 4] \\
-& \text{b) } X^* = 1 - \frac{1}{R_m} & \text{for } R_m \in [1, 4]
-\end{aligned}$$
+& \text{a) } X^\ast = 0  & \text{for } R_m \in [ 0, 4] \\
+& \text{b) } X^\ast = 1 - \frac{1}{R_m} & \text{for } R_m \in [1, 4]
+\end{aligned}
+$$
 
 ``` r
 plot_eqb_curve()
@@ -152,20 +159,31 @@ plot_eqb_curve()
 Small perturbation to $X^*$ stays small and eventually dies out over
 time.
 
-> <u>**Asymptotically stable:**</u>
->
-> Let $X^*$ be fixed point of **f**, if $\forall \epsilon \gt 0$ ,
-> $\exists \delta \gt 0$ s.t.
-> $$ |X_0 - X^* | \lt \delta \implies |X_n - X^*| \lt \epsilon, \forall n \ge 0 $$
->
-> and $\exists \delta_0 \gt 0$ s.t
-> $$|X_0 - X^* | \lt \delta_0 \implies X_n \rightarrow X^*$$
+<u>**Asymptotically stable:**</u>
 
-> <u>**Linear stability test:**</u>
->
-> Let $f : E \rightarrow E$ be evolution function where $E$ is
-> $\mathbb{R}^+$. And let $f$ be $C^1$ near fixed point $X^*$, then
-> $$\begin{aligned} |f'( X^* ) | \lt 1 & \implies X^* \text{ is asymptotically stable. } \\ |f'(X^) | \gt 1 & \implies X^* \text{ is unstable.} \end{aligned} $$
+Let $X^\ast$ be fixed point of $f$, if $\forall \epsilon \gt 0,
+\exists \delta \gt 0$ s.t.
+
+$$|X_0 - X^\ast | \lt \delta \implies |X_n - X^\ast| \lt \epsilon, \forall n \ge 0$$
+
+And $\exists \delta_0 \gt 0$ s.t
+
+$$|X_0 - X^\ast | \lt \delta_0 \implies X_n \rightarrow X^\ast$$
+
+
+<u>**Linear stability test:**</u>
+
+Let $f : E \rightarrow E$ be evolution function where $E$ is $\mathbb{R}_{\ge 0}$. 
+And let $f$ be $C^1$ near fixed point $X^\ast$, then
+
+$$
+\begin{aligned} 
+|f'( X^\ast )| \lt 1 &\implies X^* \text{ is asymptotically stable. } \\ 
+|f'(X^\ast )| \gt 1 &\implies X^* \text{ is unstable.} \\
+|f'(X^\ast )| = 1 &\implies inconclusive. 
+\end{aligned}
+$$
+
 
 #### Observations:
 
@@ -214,19 +232,19 @@ Plot_Bifurcation(x_0 = 0.1)
 
 Check `predictability of model.R` for simulation.
 
-- we have computationally checked the for error values
+- We have computationally checked the for error values
   $\delta(0) = 0.1, 0.01, 0.00001$
 
-  - you can check for multiple values by just changing `error` vector in
+  - You can check for multiple values by just changing `error` vector in
     the function input.
 
   - `Plot_error_trajectories(dynamic function, initial states, parameter values, time step, error vector)` -
-    you can change input variables and play around with any discrete
+    You can change input variables and play around with any discrete
     time dynamic function to see how they respond to errors.
 
 - Evolution of error in discrete logistic model:
 
-  - here $\delta(t) \text{ is relabeld as } E_t$
+  - Here $\delta(t) \text{ is relabeld as } E_t$
 
 ``` r
 Plot_error_trajectories(X_0_list = c(0.1), R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6, 4), t= 1:100, eps= c(0.1, 0.01, 0.00001))
@@ -255,7 +273,7 @@ Plot_error_trajectories(X_0_list = c(0.1), R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6,
 
 ------------------------------------------------------------------------
 
-### install.packages(“styler”)Stochasticity and real world interpretation of the model:
+### Stochasticity and real world interpretation of the model :
 
 - Whenever we take $R_t$ linearly decreasing with increasing $N_t$,
   values of $R_t$ lands on many fractional numbers or even irrational
@@ -273,25 +291,41 @@ Plot_error_trajectories(X_0_list = c(0.1), R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6,
   $b_t = 3$. So, we can have different distribution for given $b_t$ or
   even $N_t$ for that matter.
 
-- Let’s consider strictly integer population size
-  $N_t \in \mathbb{Z}_{\ge 0}$ with per capita birth rate
-  $b_t \in \mathbb{R}$ and suppose each individual $i$ may have any
-  number of litter size. So Let $\Omega_i = \{0, 1, 2,... \}$ be that
-  sample space and $X_i : \Omega_i \to \mathbb{R}$ be
-  $\text{Poisson}(b_t)$ random variable denoting Numbers of litter of
-  $i$-th individual (you may choose any other distribution, Negative
-  binomial is a good choice as it’s most close to reality). Here $b_t$
-  can be interpret as expected litter size for each individual. I.e. if
-  you re-run the experiment with same conditions for large number of
-  times then the average the litter size = $b_t$ and probability of
-  having $k$ litter is given by PMF
-  $P(X_i = k) = e^{-b_t} \frac{b_t^k}{k!}$, further we let
-  $S = \sum_{i =1}^{N_t} X_i$ be random variable denoting total Number
-  of births in population and since $\{X_i\}$ are iid
-  $\text{Poisson}(b_t)$, $S \sim \text{Poisson}(N_t \cdot b_t)$. And
-  since $d_t = 1$, $N_{t+1} = S$ , So $N_{t+1}$ is a random variable,
-  that takes strictly integer values; with poisson distribution and
-  expected value $E(N_{t+1}) =N_t\cdot b_t$.
+***********
+
+Let's consider a strictly integer population size $N_{t}$ $\in$ $\mathbb{Z}\_{\ge 0}$
+with per-capita birth rate $b\_{t} \in \mathbb{R}\_{\ge 0}$, and suppose each
+individual $i$ can produce any number of offspring in a litter. Let
+$\Omega\_{i} = \{0, 1, 2, \dots\}$ be the sample space, and let
+$X\_{i} : \Omega_{i} \to \mathbb{R}$ be a $\text{Poisson}(b\_{t})$ random variable
+denoting the litter size of the $i$-th individual (you may choose any other
+distribution — Negative Binomial is a good alternative, as it is closer to
+reality). Here $b\_{t}$ is interpreted as the *expected* litter size per
+individual: if you re-ran the experiment under identical conditions many
+times, the average litter size would converge to $b_{t}$, and the probability
+of a litter of size $k$ is given by the PMF
+
+$$
+P(X_{i} = k) = e^{-b_{t}} \frac{b_{t}^{k}}{k!}.
+$$
+
+Let $S = \sum_{i=1}^{N_{t}} X_{i}$ be the random variable denoting the total
+number of births in the population. Since $\{X_{i}\}$ are i.i.d.
+$\text{Poisson}(b_{t})$,
+
+$$
+S \mid N_{t} \sim \text{Poisson}(N_{t} \cdot b_{t}).
+$$
+
+Since $d_{t} = 1$ (i.e. no survivors carry over), $N_{t+1} = S$, so
+$N_{t+1}$ is itself a random variable taking strictly integer values, with
+
+$$
+N_{t+1} \mid N_{t} \sim \text{Poisson}(N_{t} \cdot b_{t}), \qquad
+\mathbb{E}[N_{t+1} \mid N_{t}] = N_{t} \cdot b_{t}.
+$$
+
+**********
 
 - To make our life simple, we take assumption that $N_t$ **is large, So
   We can summon LLN and therefore**
