@@ -246,7 +246,7 @@ $\omega -$**limit set of** $p_0$ **:**
 
 ------------------------------------------------------------------------
 
-### [Determinism, Robustness, Predictability, and Attractor Structure]{.underline}
+### Determinism, Robustness, Predictability, and Attractor Structure
 
 **Deterministic system :**
 
