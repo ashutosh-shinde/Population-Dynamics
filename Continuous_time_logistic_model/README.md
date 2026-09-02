@@ -1,11 +1,11 @@
-Continuous_time_logistic_model
+Continuous time logistic model
 ================
 
 ### Assumption :
 
 (only some important ones)
 
-- Time is continuous
+- Time is continuous.
   - $t \in \mathbb{R}_{\ge 0}$
 - Mean field
   - $N_t$ is large
@@ -32,8 +32,7 @@ Continuous_time_logistic_model
   - $N_t > 0$
 
   - state space $E = \mathbb{R}_{\ge 0}$
-- Note: Non-overlapping generation assumption is not needed here as in
-  case of discrete time.
+- Note: Non-overlapping generation assumption from discrete time model is not needed here.
 
 ------------------------------------------------------------------------
 
@@ -44,15 +43,15 @@ $\Delta t$ is very small.
 
 $\implies$
 
-$$\Delta x_t \approx r_t\Delta t \cdot x_t$$\$
+$$\Delta x_t \approx r_t\Delta t \cdot x_t$$\$$
 
 $\implies$
 
 $$\dfrac{x_{t+ \Delta t} − x_t}{\Delta t} \approx r_m x_t (1 - x_t)$$
 
 and equality holds as $\Delta t \to 0$ so taking limit both sides and
-let $f(t) = x_t = x(t)$ \<- we will treat all this as equivalent
-notaions:
+let $f(t) = x_t = x(t)$ \<- we will use any of these as equivalent
+notaion:
 
 $\implies$
 
