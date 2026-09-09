@@ -362,7 +362,11 @@ Note:
 
 ------------------------------------------------------------------------
 
-#### References:
+#### Further reading:
+
+<sub>* Nonlinear Dynamics and Chaos: With Applications to Physics, 
+Biology, Chemistry, and Engineering, third edition by Steven H.
+Strogatz*</sub>
 
 <sub>*Perko, L. Differential Equations and Dynamical Systems, 3rd ed.,
 Springer, 2001. §2.9 — attracting sets, Lyapunov stability, asymptotic
