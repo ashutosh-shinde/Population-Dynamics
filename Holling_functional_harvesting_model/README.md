@@ -1,5 +1,4 @@
-README
-================
+# README
 
 ## Population dynamics in presence of harvester.
 
@@ -29,7 +28,7 @@ I have considered some standard harvester functions here :
   $H(N) = \frac{h_0 N^\theta}{N_0^{\theta} + N^{\theta}}$
 
 Here $h_0$ is intrinsic harvesting rate, $N_0$ is half saturation point
-i.e. at $N = N_0$, harvesting rate is exactly half of its intrinsic
+i.e. at $N = N_0$, harvesting rate is exactly half of its intrinsic
 harvesting constant.
 
 Rescaling, $x = N/K$
@@ -55,7 +54,7 @@ plot(Traj$time, Traj$x, type = "l", xlab = "Time", ylab =
      Type III Harvesting, theta = 2", cex.main = 0.7)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-72-1.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-72-1.png" width="50%"/>
 
 ------------------------------------------------------------------------
 
@@ -100,9 +99,9 @@ see that $x=0$ is asymptotically stable for $x\geq 0$.
 we have, $$\frac{d}{dt} \Delta x \approx  f'(x) \Delta x$$
 
 Then, The characteristic relaxation timescale near a stable equilibrium
-is $\tau=1/|f'(x^*)|$. As $f'(x^*) \to 0$, this timescale diverges, a
-phenomenon known as critical slowing down in phase transition.(I will
-upload more about it soon. `work in progress`)
+is $\tau=1/|f'(x^ \ast)|$. As $f'(x^ \ast) \to 0$, this timescale
+diverges, a phenomenon known as critical slowing down in phase
+transition.(I will upload more about it soon. `work in progress`)
 
 **Bifurcation diagram** : $h_0$ is already per-capita (same units as
 $r_m$), so $x = N/K_0$ alone makes the model dimensionless — no
@@ -193,7 +192,7 @@ key ideas of code explained.
     $$f'(x^\ast) \approx \frac{f(x^\ast + \Delta x) - f(x^\ast - \Delta x)}{2\Delta x},\ \ \Delta x \text{ is very small}.$$
 
 5.  **Bifurcation diagram :** we plot equilibrium points against
-    parameter (e.g. $h_0$ for Type $\mathrm{I}$, $h$ for Types
+    parameter (e.g. $h_0$ for Type $\mathrm{I}$, $h$ for Types
     $\mathrm{II}, \mathrm{III}$). Showing how equilibria appear,
     disappear, or collide (fold points) as harvesting pressure
     increases.
@@ -213,7 +212,7 @@ plot_bifurcation(f0, var_param = "c",
                  I_max = 2)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-73-1.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-73-1.png" width="50%"/>
 
 Observations :
 
@@ -230,7 +229,7 @@ plot_bifurcation(f1, var_param = "h_0",
                  I_max = 2)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-74-1.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-74-1.png" width="50%"/>
 
 Observations :
 
@@ -249,7 +248,7 @@ plot_bifurcation(f23, var_param = "h",
                  I_max = 2)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-75-1.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-75-1.png" width="50%"/>
 
 Observations:
 
@@ -266,7 +265,7 @@ plot_bifurcation(f23, var_param = "h",
                  I_max = 5)
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-76-1.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-76-1.png" width="50%"/>
 
 **Some more graphs:**
 
@@ -289,7 +288,7 @@ for (i in 1:nrow(parameter_sets)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-77-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-6.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-7.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-8.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-77-9.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-77-1.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-2.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-3.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-4.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-5.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-6.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-7.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-8.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-77-9.png" width="50%"/>
 
 **Observations : `work in progress`**
 
