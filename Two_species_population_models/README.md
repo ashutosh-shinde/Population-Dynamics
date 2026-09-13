@@ -1,5 +1,4 @@
-README
-================
+# README
 
 # Two species population dynamics
 
@@ -52,104 +51,62 @@ $$\mathbf{J}_f (N_1^ \ast, N_2^ \ast) = \begin{bmatrix}
   > To avoid floating-point noise we use small tolerances like $1e-8$
   > instead of strict $0$.
 
-<table style="width:99%;">
-<colgroup>
-<col style="width: 44%" />
-<col style="width: 26%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Eigenvalue Condition</th>
-<th style="text-align: left;">Classification<br />
-(ref : Strogatz)</th>
-<th style="text-align: left;">Phase Portrait Stability</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Complex with <span
-class="math inline">Re(<em>λ</em>) &lt; 0</span></td>
-<td style="text-align: left;"><strong>Stable Spiral</strong></td>
-<td style="text-align: left;">Asymptotically Stable</td>
-</tr>
-<tr>
-<td style="text-align: left;">Complex with <span
-class="math inline">Re(<em>λ</em>) &gt; 0</span></td>
-<td style="text-align: left;"><strong>Unstable Spiral</strong></td>
-<td style="text-align: left;">Unstable</td>
-</tr>
-<tr>
-<td style="text-align: left;">Complex with <span
-class="math inline">Re(<em>λ</em>) = 0</span></td>
-<td style="text-align: left;"><p><strong>Center</strong></p>
-<p>(Or other non-hyperbolic curves as non-linear terms take over;
-linearization fails)</p></td>
-<td style="text-align: left;"><p>Lyapunov Stable</p>
-<p>(Or Inconclusive)</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">Real and both <span
-class="math inline"><em>λ</em> &lt; 0</span></td>
-<td style="text-align: left;"><strong>Stable Node</strong></td>
-<td style="text-align: left;">Asymptotically Stable</td>
-</tr>
-<tr>
-<td style="text-align: left;">Real and both <span
-class="math inline"><em>λ</em> &gt; 0</span></td>
-<td style="text-align: left;"><strong>Unstable Node</strong></td>
-<td style="text-align: left;">Unstable</td>
-</tr>
-<tr>
-<td style="text-align: left;">Real with opposite signs <span
-class="math inline">(<em>λ</em><sub>1</sub> &gt; 0, <em>λ</em><sub>2</sub> &lt; 0)</span></td>
-<td style="text-align: left;"><strong>Saddle Point</strong></td>
-<td style="text-align: left;">Unstable</td>
-</tr>
-<tr>
-<td style="text-align: left;">At least one <span
-class="math inline"><em>λ</em> = 0</span></td>
-<td style="text-align: left;"><p><strong>Non-hyperbolic</strong></p>
-<p>(linearization fails; non-linear terms take over)</p></td>
-<td style="text-align: left;">Inconclusive<br />
-Needs nonlinear terms</td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><span
-class="math inline"><em>λ</em><sub>1</sub> = <em>λ</em><sub>2</sub> ≠ 0</span>
-and</p>
-<p>A is not diagonalizable.</p></td>
-<td style="text-align: left;"><strong>Degenerate node</strong></td>
-<td style="text-align: left;"><dl>
-<dt><span class="math inline"><em>λ</em> &lt; 0</span></dt>
-<dd>
-<p>Asymptotically Stable</p>
-</dd>
-<dt><span class="math inline"><em>λ</em> &gt; 0</span></dt>
-<dd>
-<p>Unstable</p>
-</dd>
-</dl></td>
-</tr>
-<tr>
-<td style="text-align: left;"><p><span
-class="math inline"><em>λ</em><sub>1</sub> = <em>λ</em><sub>2</sub> ≠ 0</span>
-and</p>
-<p>A is diagonalizable.</p></td>
-<td style="text-align: left;">Star node</td>
-<td style="text-align: left;"><dl>
-<dt><span class="math inline"><em>λ</em> &lt; 0</span></dt>
-<dd>
-<p>Asymptotically Stable</p>
-</dd>
-<dt><span class="math inline"><em>λ</em> &gt; 0</span></dt>
-<dd>
-<p>Unstable</p>
-</dd>
-</dl></td>
-</tr>
-</tbody>
-</table>
++------------------------+--------------------+---------------------+
+| Eigenvalue Condition   | Classification\    | Phase Portrait      |
+|                        | (ref : Strogatz)   | Stability           |
++:=======================+:===================+:====================+
+| Complex with Re(λ) < 0 | **Stable Spiral**  | Asymptotically      |
+|                        |                    | Stable              |
++------------------------+--------------------+---------------------+
+| Complex with Re(λ) > 0 | **Unstable         | Unstable            |
+|                        | Spiral**           |                     |
++------------------------+--------------------+---------------------+
+| Complex with Re(λ) = 0 | **Center**         | Lyapunov Stable     |
+|                        |                    |                     |
+|                        | (Or other          | (Or Inconclusive)   |
+|                        | non-hyperbolic     |                     |
+|                        |                    |                     |
+|                        | curves as          |                     |
+|                        | non-linear terms   |                     |
+|                        |                    |                     |
+|                        | take over;         |                     |
+|                        | linearization      |                     |
+|                        | fails)             |                     |
++------------------------+--------------------+---------------------+
+| Real and both λ < 0    | **Stable Node**    | Asymptotically      |
+|                        |                    | Stable              |
++------------------------+--------------------+---------------------+
+| Real and both λ > 0    | **Unstable Node**  | Unstable            |
++------------------------+--------------------+---------------------+
+| Real with opposite     | **Saddle Point**   | Unstable            |
+| signs (λ1 > 0, λ2 < 0) |                    |                     |
++------------------------+--------------------+---------------------+
+| At least one λ = 0     | **Non-hyperbolic** | Inconclusive\       |
+|                        |                    | Needs nonlinear     |
+|                        | (linearization     | terms               |
+|                        | fails;             |                     |
+|                        |                    |                     |
+|                        | non-linear terms   |                     |
+|                        | take over)         |                     |
++------------------------+--------------------+---------------------+
+| λ1 = λ2 ≠ 0 and        | **Degenerate       | λ < 0 :             |
+|                        | node**             |                     |
+| A is not               |                    | :   Asymptotically  |
+| diagonalizable.        |                    |     Stable          |
+|                        |                    |                     |
+|                        |                    | λ > 0 :             |
+|                        |                    |                     |
+|                        |                    | :   Unstable        |
++------------------------+--------------------+---------------------+
+| λ1 = λ2 ≠ 0 and        | **Star node**      | λ < 0 :             |
+|                        |                    |                     |
+| A is diagonalizable.   |                    | :   Asymptotically  |
+|                        |                    |     Stable          |
+|                        |                    |                     |
+|                        |                    | λ > 0 :             |
+|                        |                    |                     |
+|                        |                    | :   Unstable        |
++------------------------+--------------------+---------------------+
 
 Note : Classification on generated graphs below may be incorrect in case
 of any $Re(\lambda) = 0$. Also, for simplicity, In the code I have
@@ -250,67 +207,34 @@ r_1 \left(1 - \frac{(2N_1 + \alpha_{21}N_2)}{K_1}\right)
 **Overall biologically important possibilities of asymptotic stability
 are following :**
 
-<table style="width:97%;">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 38%" />
-<col style="width: 34%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">Stable equilibrium</th>
-<th style="text-align: left;">Condition</th>
-<th style="text-align: left;">Ecological outcome</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span
-class="math inline"><em>e</em><sub>0</sub></span></td>
-<td style="text-align: left;"><span
-class="math inline"><em>r</em><sub>1</sub> &lt; 0, <em>r</em><sub>2</sub> &lt; 0</span></td>
-<td style="text-align: left;">Both species go extinct</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline"><em>e</em><sub>1</sub></span></td>
-<td style="text-align: left;"><span
-class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span>
-and <span
-class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span></td>
-<td style="text-align: left;">Species 1 excludes Species 2</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline"><em>e</em><sub>2</sub></span></td>
-<td style="text-align: left;"><span
-class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span>
-and <span
-class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span></td>
-<td style="text-align: left;">Species 2 excludes Species 1</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline"><em>e</em><sub>3</sub></span></td>
-<td style="text-align: left;"><span
-class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span>
-and <span
-class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span></td>
-<td style="text-align: left;">Stable coexistence</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline"><em>e</em><sub>1</sub>, <em>e</em><sub>2</sub></span></td>
-<td style="text-align: left;"><span
-class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span>
-and <span
-class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span></td>
-<td style="text-align: left;"><p>Bistability / Founder effect</p>
-<p>(Initial conditions determines the winner; competitive advantage for
-larger population)</p></td>
-</tr>
-</tbody>
-</table>
++-------------+-----------------------------+-----------------------+
+| Stable      | Condition                   | Ecological outcome    |
+| equilibrium |                             |                       |
++:===========:+:============================+:======================+
+| e0          | r1 < 0, r2 < 0              | Both species go       |
+|             |                             | extinct               |
++-------------+-----------------------------+-----------------------+
+| e1          | α12K1 > K2 and              | Species 1 excludes    |
+|             |                             | Species 2             |
+|             | K1 > α21K2                  |                       |
++-------------+-----------------------------+-----------------------+
+| e2          | K2 > α12K1 and              | Species 2 excludes    |
+|             |                             | Species 1             |
+|             | α21K2 > K1                  |                       |
++-------------+-----------------------------+-----------------------+
+| e3          | K1 > α21K2 and              | Stable coexistence    |
+|             |                             |                       |
+|             | K2 > α12K1                  |                       |
++-------------+-----------------------------+-----------------------+
+| e1, e2      | α21K2 > K1 and              | Bistability / Founder |
+|             |                             | effect                |
+|             | α12K1 > K2                  |                       |
+|             |                             | (Initial conditions   |
+|             |                             | determines the        |
+|             |                             | winner; competitive   |
+|             |                             | advantage for larger  |
+|             |                             | population)           |
++-------------+-----------------------------+-----------------------+
 
 ------------------------------------------------------------------------
 
@@ -399,7 +323,7 @@ for (eg in names(examples_list)) {
 }
 ```
 
-<img src="README_files/figure-gfm/Phase_portrait_LV-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-6.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-7.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_portrait_LV-8.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/Phase_portrait_LV-1.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-2.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-3.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-4.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-5.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-6.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-7.png" width="50%"/><img src="README_files/figure-gfm/Phase_portrait_LV-8.png" width="50%"/>
 
 ------------------------------------------------------------------------
 
@@ -517,7 +441,7 @@ for (eg in names(param_list)) {
 }
 ```
 
-<img src="README_files/figure-gfm/Phase_protrait_CR-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_protrait_CR-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/Phase_protrait_CR-3.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/Phase_protrait_CR-1.png" width="50%"/><img src="README_files/figure-gfm/Phase_protrait_CR-2.png" width="50%"/><img src="README_files/figure-gfm/Phase_protrait_CR-3.png" width="50%"/>
 
 ------------------------------------------------------------------------
 
@@ -526,7 +450,7 @@ for (eg in names(param_list)) {
 ## 3. Prey-predator Models
 
 Let $N$ be pray population and $P$ be predator population. Then general
-form of continuous prey-predator model can be written as  
+form of continuous prey-predator model can be written as
 
 > $\dfrac{dN}{dt} =$ Growth rate in absence of predator - Death rate due
 > to predation
@@ -593,7 +517,7 @@ for (eg in (examples)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-59-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-59-2.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-59-1.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-59-2.png" width="50%"/>
 
 ##### Note :
 
@@ -640,7 +564,7 @@ for (eg in (examples)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-60-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-60-2.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-60-1.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-60-2.png" width="50%"/>
 
 ##### Note :
 
@@ -703,7 +627,7 @@ for (eg in (examples)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-61-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-61-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-61-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-61-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-61-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-61-6.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-61-1.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-61-2.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-61-3.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-61-4.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-61-5.png" width="50%"/><img src="README_files/figure-gfm/unnamed-chunk-61-6.png" width="50%"/>
 
 ##### Note :
 
@@ -717,7 +641,8 @@ for (eg in (examples)) {
   - `Low K` : Coexistence equilibrium is a **stable spiral**
 
   - `Mid K` : Slow, barely-decaying oscillations.
-    - Eigenvalue real part ≈ 0.  
+
+    - Eigenvalue real part ≈ 0.\
     - Technically neither stable nor unstable spiral.
     - Approaching the Hopf bifurcation.
 

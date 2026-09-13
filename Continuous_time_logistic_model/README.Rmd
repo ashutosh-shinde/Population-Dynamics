@@ -2,6 +2,7 @@
 title: "Continuous_time_logistic_model"
 output: github_document
 ---
+
 ```{r setup, include=FALSE}
 source("Continuous_time_logistic_model.R")
 ```
@@ -49,7 +50,7 @@ $\Delta t$ is very small.
 
 $\implies$
 
-$$\Delta x_t \approx r_t\Delta t \cdot x_t$$$
+$$\Delta x_t \approx r_t\Delta t \cdot x_t$$\$
 
 $\implies$
 
@@ -65,7 +66,7 @@ $$\boxed{\frac{d}{dt}x(t) = r_m x_t(1-x_t)}$$
 
 **Note :**
 
--  Unlike discrete model, $N_t$ can grow beyond $K$ as $r$ can take
+- Unlike discrete model, $N_t$ can grow beyond $K$ as $r$ can take
   negative values.
 
 <!-- -->
@@ -109,6 +110,7 @@ $$\boxed{\frac{d}{dt}x(t) = r_m x_t(1-x_t)}$$
 > I have used Euler discretization of $\dot{x} = rx(1-x)$
 
 $$x_{t+\Delta t} = x_t + r_m (1−x_t) x_t \Delta t$$
+
 ```{r}
 trajectory = logistic_growth(x0 = 0.23, r = 0.11, delta_t = 0.01, 
                              t_max = 100)

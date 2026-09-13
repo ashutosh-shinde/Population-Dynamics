@@ -213,33 +213,34 @@ r_1 \left(1 - \frac{(2N_1 + \alpha_{21}N_2)}{K_1}\right)
 **Overall biologically important possibilities of asymptotic stability
 are following :**
 
-+----------------+---------------------------+------------------------+
-| Stable         | Condition                 | Ecological outcome     |
-| equilibrium    |                           |                        |
-+:==============:+:==========================+:=======================+
-| $e_0$          | $r_1 \lt 0,\ r_2 \lt 0$   | Both species go        |
-|                |                           | extinct                |
-+----------------+---------------------------+------------------------+
-| $e_1$          | $\alpha_{12} K_1 \gt K_2$ | Species 1 excludes     |
-|                | and                       | Species 2              |
-|                | $K_1 \gt \alpha_{21}K_2$  |                        |
-+----------------+---------------------------+------------------------+
-| $e_2$          | $K_2 \gt \alpha_{12} K_1$ | Species 2 excludes     |
-|                | and                       | Species 1              |
-|                | $\alpha_{21} K_2 \gt K_1$ |                        |
-+----------------+---------------------------+------------------------+
-| $e_3$          | $K_1 \gt \alpha_{21}K_2$  | Stable coexistence     |
-|                | and                       |                        |
-|                | $K_2 \gt \alpha_{12}K_1$  |                        |
-+----------------+---------------------------+------------------------+
-| $e_1,\ e_2$    | $\alpha_{21}K_2 \gt K_1$  | Bistability / Founder  |
-|                | and                       | effect                 |
-|                | $\alpha_{12}K_1 \gt K_2$  |                        |
-|                |                           | (Initial conditions    |
-|                |                           | determines the winner; |
-|                |                           | competitive advantage  |
-|                |                           | for larger population) |
-+----------------+---------------------------+------------------------+
++----------------+---------------------------+-----------------------+
+| Stable         | Condition                 | Ecological outcome    |
+| equilibrium    |                           |                       |
++:==============:+:==========================+:======================+
+| $e_0$          | $r_1 \lt 0,\ r_2 \lt 0$   | Both species go       |
+|                |                           | extinct               |
++----------------+---------------------------+-----------------------+
+| $e_1$          | $\alpha_{12} K_1 \gt K_2$ | Species 1 excludes    |
+|                | and                       | Species 2             |
+|                | $K_1 \gt \alpha_{21}K_2$  |                       |
++----------------+---------------------------+-----------------------+
+| $e_2$          | $K_2 \gt \alpha_{12} K_1$ | Species 2 excludes    |
+|                | and                       | Species 1             |
+|                | $\alpha_{21} K_2 \gt K_1$ |                       |
++----------------+---------------------------+-----------------------+
+| $e_3$          | $K_1 \gt \alpha_{21}K_2$  | Stable coexistence    |
+|                | and                       |                       |
+|                | $K_2 \gt \alpha_{12}K_1$  |                       |
++----------------+---------------------------+-----------------------+
+| $e_1,\ e_2$    | $\alpha_{21}K_2 \gt K_1$  | Bistability / Founder |
+|                | and                       | effect                |
+|                | $\alpha_{12}K_1 \gt K_2$  |                       |
+|                |                           | (Initial conditions   |
+|                |                           | determines the        |
+|                |                           | winner; competitive   |
+|                |                           | advantage for larger  |
+|                |                           | population)           |
++----------------+---------------------------+-----------------------+
 
 ------------------------------------------------------------------------
 
