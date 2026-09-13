@@ -29,7 +29,7 @@ README
 - The Jacobian at $(N_1^ \ast, N_2^ \ast)$: (For stability analysis)
 
 $$\mathbf{J}_f (N_1^ \ast, N_2^ \ast) = \begin{bmatrix}
-      \frac{\partial f_1} {\partial N_1} & \frac{\partial f_1} {\partial N_2} \\[1ex]
+      \frac{\partial f_1} {\partial N_1} & \frac{\partial f_1} {\partial N_2} \\
       \frac{\partial f_2} {\partial N_1} & \frac{\partial f_2} {\partial N_2}
   \end{bmatrix}$$
 
@@ -83,8 +83,10 @@ class="math inline">Re(<em>λ</em>) &gt; 0</span></td>
 <td style="text-align: left;">Complex with <span
 class="math inline">Re(<em>λ</em>) = 0</span></td>
 <td style="text-align: left;"><p><strong>Center</strong></p>
-<p>(Or other non-hyperbolic curves as non-linear terms take over;
-linearization fails)</p></td>
+<p>(Or other non-hyperbolic</p>
+<p>curves as non-linear</p>
+<p>terms take over;</p>
+<p>linearization fails)</p></td>
 <td style="text-align: left;"><p>Lyapunov Stable</p>
 <p>(Or Inconclusive)</p></td>
 </tr>
@@ -110,7 +112,9 @@ class="math inline">(<em>λ</em><sub>1</sub> &gt; 0, <em>λ</em><sub>2</su
 <td style="text-align: left;">At least one <span
 class="math inline"><em>λ</em> = 0</span></td>
 <td style="text-align: left;"><p><strong>Non-hyperbolic</strong></p>
-<p>(linearization fails; non-linear terms take over)</p></td>
+<p>(linearization fails;</p>
+<p>non-linear terms</p>
+<p>take over)</p></td>
 <td style="text-align: left;">Inconclusive<br />
 Needs nonlinear terms</td>
 </tr>
@@ -121,11 +125,11 @@ and</p>
 <p>A is not diagonalizable.</p></td>
 <td style="text-align: left;"><strong>Degenerate node</strong></td>
 <td style="text-align: left;"><dl>
-<dt><span class="math inline"><em>λ</em> &lt; 0</span></dt>
+<dt><span class="math inline"><em>λ</em> &lt; 0</span> :</dt>
 <dd>
 <p>Asymptotically Stable</p>
 </dd>
-<dt><span class="math inline"><em>λ</em> &gt; 0</span></dt>
+<dt><span class="math inline"><em>λ</em> &gt; 0</span> :</dt>
 <dd>
 <p>Unstable</p>
 </dd>
@@ -138,11 +142,11 @@ and</p>
 <p>A is diagonalizable.</p></td>
 <td style="text-align: left;">Star node</td>
 <td style="text-align: left;"><dl>
-<dt><span class="math inline"><em>λ</em> &lt; 0</span></dt>
+<dt><span class="math inline"><em>λ</em> &lt; 0</span> :</dt>
 <dd>
 <p>Asymptotically Stable</p>
 </dd>
-<dt><span class="math inline"><em>λ</em> &gt; 0</span></dt>
+<dt><span class="math inline"><em>λ</em> &gt; 0</span> :</dt>
 <dd>
 <p>Unstable</p>
 </dd>
@@ -236,7 +240,7 @@ $$\mathbf{J} =
 \begin{bmatrix} 
 r_1 \left(1 - \frac{(2N_1 + \alpha_{21}N_2)}{K_1}\right) 
 & -r_1\frac{ \alpha_{21}N_1}{K_1}
-\\[1ex]
+\\
 -r_2\frac{ \alpha_{12}N_2}{K_2}
 & r_2 \left(1 - \frac{(2N_2 + \alpha_{12}N_1)}{K_2}\right) 
 \end{bmatrix}$$
@@ -252,9 +256,9 @@ are following :**
 
 <table style="width:96%;">
 <colgroup>
-<col style="width: 23%" />
-<col style="width: 38%" />
-<col style="width: 33%" />
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 34%" />
 </colgroup>
 <thead>
 <tr>
@@ -274,37 +278,41 @@ class="math inline"><em>r</em><sub>1</sub> &lt; 0, <em>r</em><sub>2</sub>�
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>1</sub></span></td>
-<td style="text-align: left;"><span
+<td style="text-align: left;"><p><span
 class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span>
-and <span
-class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span></td>
+and</p>
+<p><span
+class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span></p></td>
 <td style="text-align: left;">Species 1 excludes Species 2</td>
 </tr>
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>2</sub></span></td>
-<td style="text-align: left;"><span
+<td style="text-align: left;"><p><span
 class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span>
-and <span
-class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span></td>
+and</p>
+<p><span
+class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span></p></td>
 <td style="text-align: left;">Species 2 excludes Species 1</td>
 </tr>
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>3</sub></span></td>
-<td style="text-align: left;"><span
+<td style="text-align: left;"><p><span
 class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span>
-and <span
-class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span></td>
+and</p>
+<p><span
+class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span></p></td>
 <td style="text-align: left;">Stable coexistence</td>
 </tr>
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>1</sub>, <em>e</em><sub>2</sub></span></td>
-<td style="text-align: left;"><span
+<td style="text-align: left;"><p><span
 class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span>
-and <span
-class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span></td>
+and</p>
+<p><span
+class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span></p></td>
 <td style="text-align: left;"><p>Bistability / Founder effect</p>
 <p>(Initial conditions determines the winner; competitive advantage for
 larger population)</p></td>
@@ -417,7 +425,7 @@ constant input rate $I$.
 
 So we have the following model :
 
-$$\dfrac{dR}{dt} = I - F(R, C)\\[1ex]
+$$\dfrac{dR}{dt} = I - F(R, C)\\
 \dfrac{dC}{dt} = \gamma \cdot F(R,C) - \delta C$$
 
 - Here $\gamma$ is conversion efficiency.
@@ -438,8 +446,8 @@ $$\dfrac{dR}{dt} = I - F(R, C)\\[1ex]
   response from scratch, using Time budget i.e. by considering
   `searching time` and `handling/eating time`. `work in progress`
 
-$$\dfrac{dR}{dt} = I - \beta_1 \dfrac{R}{R_{01} + R} C_1 - \beta_2 \dfrac{R}{R_{02} + R} C_2 \\[1ex]
-\dfrac{C_1}{dt} = \gamma_1 \beta_1 \dfrac{R}{R_{01} + R} C_1 - \delta_1 C_1 \\[1ex]
+$$\dfrac{dR}{dt} = I - \beta_1 \dfrac{R}{R_{01} + R} C_1 - \beta_2 \dfrac{R}{R_{02} + R} C_2 \\
+\dfrac{C_1}{dt} = \gamma_1 \beta_1 \dfrac{R}{R_{01} + R} C_1 - \delta_1 C_1 \\
 \dfrac{C_2}{dt} = \gamma_2 \beta_2 \dfrac{R}{R_{02} + R} C_2 - \delta_2 C_2 $$
 
 ------------------------------------------------------------------------
@@ -448,8 +456,8 @@ $$\dfrac{dR}{dt} = I - \beta_1 \dfrac{R}{R_{01} + R} C_1 - \beta_2 \dfrac{R}{R_{
 
 Solve : $\dot R = 0, \ \ \dot C_1 = 0, \ \ \dot C_2 = 0$
 
-$$R^ \ast \left( \dfrac{\beta_1 C_1}{R_{01} + R^ \ast} -  \dfrac{\beta_2 C_2 }{R_{02} + R^ \ast} \right) = I \\[1ex]
-C_1^ \ast \left(\gamma_1 \beta_1 \dfrac{R^ \ast}{R_{01} + R^ \ast} - \delta_1 \right) = 0 \\[1ex]
+$$R^ \ast \left( \dfrac{\beta_1 C_1}{R_{01} + R^ \ast} -  \dfrac{\beta_2 C_2 }{R_{02} + R^ \ast} \right) = I \\
+C_1^ \ast \left(\gamma_1 \beta_1 \dfrac{R^ \ast}{R_{01} + R^ \ast} - \delta_1 \right) = 0 \\
 C_2^ \ast \left(\gamma_2 \beta_2 \dfrac{R^ \ast}{R_{02} + R^ \ast} - \delta_2 \right) = 0$$
 
 > One shall solve this by hand to know what exactly going on here.
@@ -534,7 +542,7 @@ form of continuous prey-predator model can be written as
 > $\dfrac{dP}{dt} =$ conversion efficiency $\times$ Death rate due to
 > predation - Death rate of predators
 
-$$\dfrac{dN}{dt} = f(N) - h(N, P) \\[1ex]
+$$\dfrac{dN}{dt} = f(N) - h(N, P) \\
 \dfrac{dP}{dt} = \gamma h(N, P) - \delta(P)$$
 
 ------------------------------------------------------------------------
@@ -556,7 +564,7 @@ $$\dfrac{dN}{dt} = f(N) - h(N, P) \\[1ex]
 
 - $r, \beta, \gamma, \delta \gt 0$, otherwise NBS.
 
-$$\dfrac{dN}{dt} = r N - \beta N P \\[1ex]
+$$\dfrac{dN}{dt} = r N - \beta N P \\
 \dfrac{dP}{dt} = \gamma \beta N P - \delta P$$
 
 ##### **Fixed points:**
@@ -569,7 +577,7 @@ $$\dfrac{dN}{dt} = r N - \beta N P \\[1ex]
 
 $$\mathbf{J} = 
 \begin{bmatrix}
-r - \beta P  & -N\beta \\[1ex]
+r - \beta P  & -N\beta \\
 \gamma \beta P & \gamma \beta N - \delta
 \end{bmatrix}$$
 
@@ -593,7 +601,7 @@ for (eg in (examples)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-2-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-2-2.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-1-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-1-2.png" alt="" width="50%" />
 
 ##### Note :
 
@@ -613,7 +621,7 @@ for (eg in (examples)) {
 
 - rest it is same as LV model.
 
-$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta N P \\[1ex]
+$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta N P \\
 \dfrac{dP}{dt} = \gamma \beta N P - \delta P$$
 
 > The fixed points and Jacobian matrix are omitted here for brevity, as
@@ -640,7 +648,7 @@ for (eg in (examples)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-2.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-2-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-2-2.png" alt="" width="50%" />
 
 ##### Note :
 
@@ -664,7 +672,7 @@ for (eg in (examples)) {
 
 - $\delta(p) = \delta \cdot P$ : Constant per capita death rate.
 
-$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta \dfrac{NP}{N_0 + N} \\[1ex]
+$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta \dfrac{NP}{N_0 + N} \\
 \dfrac{dP}{dt} = \gamma \beta \dfrac{NP}{N_0 + N} - \delta P$$
 
 > The fixed points and Jacobian matrix are omitted here for brevity, as
@@ -703,7 +711,7 @@ for (eg in (examples)) {
 }
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-4-6.png" alt="" width="50%" />
+<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-2.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-3.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-4.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-5.png" alt="" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-6.png" alt="" width="50%" />
 
 ##### Note :
 
@@ -711,18 +719,13 @@ for (eg in (examples)) {
 
   - `very low K` : gives stable node for prey population and predator go
     extinct.
-
-  <!-- -->
-
   - `Low K` : Coexistence equilibrium is a **stable spiral**
-
-  - `Mid K` : Slow, barely-decaying oscillations. Eigenvalue real part ≈
-
-    0.  
+  - `Mid K` : Slow, barely-decaying oscillations.
+    - Eigenvalue real part ≈ 0.
 
     - Technically neither stable nor unstable spiral.
-    - Approaching the Hopf bifurcation.
 
+    - Approaching the Hopf bifurcation.
   - `High K` Coexistence equilibrium is **unstable spiral**. Orbits
     diverge from equilibrium and settle onto a **stable limit cycle**
     (sustained oscillations, not decay).
