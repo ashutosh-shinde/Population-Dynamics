@@ -170,8 +170,8 @@ nodes accordingly.
 
 Let us consider population of two species SP1 and SP2 with population
 sizes $N_1$ and $N_2$ and assume that both populations grows
-logistically i.e. They have intrinsic population growth rate $r_1, r_2$
-and $K_1, K_2$ be carrying capacity in absence of other species. Then we
+logistically (i.e. they have intrinsic population growth rate $r_1, r_2$
+and $K_1, K_2$ be carrying capacity) in absence of other species. Then we
 have two growth equations :
 
 $$\dfrac{dN_1}{dt} = r_1 N_1 \left( 1 - \frac{N_1}{K_1} \right) - \text{growth decay due to interspecific competition}$$
@@ -199,7 +199,7 @@ $$\frac{1}{N_1} \frac{dN_1}{dt} = r_1 \left( 1 -  \frac{N_2}{K'_1} - \frac{N_1}{
 Here $K'_1$ is number of SP2 individuals that alone can reduce SP1’s per
 capita growth rate to $0$.
 
-Let $\alpha_{21} = \frac{K_1}{K'_1}$. It represents effect of
+Let $\alpha_{21} = \frac{K_1}{{K_1}'}$. It represents effect of
 competition of SP2 on SP1. If $\alpha_{21} = 1$ that means we are
 treating SP2 population as having same effect on SP1 population as of
 their own. if $\alpha_{21} = 2$ implies one individual of SP2 in
