@@ -1,48 +1,79 @@
-# POPULATION DYNAMICS
+# Population Dynamics
 
-> **Mathematical theory + computational simulations of population
-> dynamics**
+> **Mathematical theory + computational simulations of population dynamics**
 
-This repository develops the logistic growth model from the scratch and
-its discrete, continuous, stochastic, and multi-species generalizations,
-alongside `R` implementations that simulate the resulting dynamics.
+A from-scratch mathematical and computational treatment of population
+dynamics. The project begins with the logistic growth model and builds
+out its discrete, continuous, stochastic, and multi-species
+generalizations. Each model is implemented in `R` and paired with a
+self-contained theoretical write-up.
 
-Each folder has a `README` that construct mathematical theory underlying
-that folder’s models, Which also contains some trajectory graphs,
-bifurcation diagrams etc. generated from the simulations.
+**Every folder has its own `README` with the complete story: derivations,
+assumptions, and simulation outputs (trajectories, phase planes,
+bifurcation diagrams).**
 
-Every script can be downloaded and run directly in `R`, along with any
-source files it imports.
+---
+
+## Repository structure
+
+| Stage | Model | Folder |
+|---|---|---|
+| 1 | Discrete time logistic growth model | [`/Discrete_time_logistic_model`](./Discrete_time_logistic_model) |
+| 2 | Continuous time logistic growth model | [`/Continuous_time_logistic_model`](./Continuous_time_logistic_model) |
+| 3 | Harvesting and Holling functional response models | [`/Holling_functional_harvesting_model`](./Holling_functional_harvesting_model) |
+| 4 | Two species competition and prey-predator dynamics | [`/Two_species_population_models`](./Two_species_population_models) |
+| 5 | Multi species dynamics (in progress) | — |
+
+## What's worth a closer look
+
+- **Discrete models**: an explicit assumptions section, and stochasticity
+  layered on top of the mean field structure to make precise what a mean
+  field is actually averaging over.
+- **Stability and predictability**: equilibrium stability is worked out
+  through Jacobian and eigenvalue analysis throughout. Lyapunov
+  exponents and their classification are discussed below for context,
+  as the natural next step, even though they are not directly computed
+  in the analysis.
+- **Two species models**: Holling type functional responses and
+  predator prey dynamics. Multi species generalizations are
+  under progress.
+
+## On the theory
+
+The theory sections aim for mathematical rigor and are meant to be
+self-contained, though space constraints mean some notation is used
+loosely, and not every hypothesis is restated at the point it is
+invoked. I would suggest going through the simulations first to build
+intuition. The equations tend to click once you have watched them play
+out; the theory reads easier after that.
+
+Some constructions depart from standard references and reflect my own
+framing. Where something reads as ambiguous, it probably is. Corrections
+are welcome.
+
+All models here are deterministic mean field models. The one exception
+is a limited, deliberate use of randomness in the discrete models,
+introduced specifically to make the mean field structure explicit. This
+is not stochastic modelling in the general sense.
+
+## Acknowledgments and scope
+
+This project began as an extension of Prof. Guttal's EC201 course on
+YouTube. The mathematical framing draws on Strogatz's *Nonlinear
+Dynamics and Chaos* and a handful of research papers, alongside
+constructions I developed myself, which are not guaranteed to be error
+free. AI tools were used to help catch errors and gaps in the theory.
+The simulation code and the mathematical write ups are otherwise written
+by hand.
+
 
 ------------------------------------------------------------------------
 
-#### Repository structure
-
-> $${\text{Discrete time logistic growth model}} 
-> \to
-> {\text{Continuous time logistic growth model}}
-> \to
-> {\text{Holling functional - harvesting models}}
-> \to {\text{Two Species - population models}}$$
-
-#### On the theory:
-
-The theory sections aim for mathematical rigor in definitions and are
-intended to be self-sufficient, though space constraints mean some
-notation is used loosely, and not every hypothesis is stated explicitly
-at the point it’s invoked. I’d suggest going through the models first to
-build intuition before working through the underlying theory — the
-equations tend to make more sense once you’ve watched them play out.
-
-At some points, the construction may differ from a standard reference
-and reflects my own mathematical framing. If something reads as
-ambiguous, it likely is; I’d welcome corrections.
-
 ------------------------------------------------------------------------
+## General definitions and results
 
-------------------------------------------------------------------------
+### Dynamical systems
 
-## Dynamical System
 
 **State Space (Phase Space) :**
 
