@@ -22,7 +22,7 @@ bifurcation diagrams).**
 | 2 | Continuous time logistic growth model | [`/Continuous_time_logistic_model`](./Continuous_time_logistic_model) |
 | 3 | Harvesting and Holling functional response models | [`/Holling_functional_harvesting_model`](./Holling_functional_harvesting_model) |
 | 4 | Two species competition and prey-predator dynamics | [`/Two_species_population_models`](./Two_species_population_models) |
-| 5 | Multi species dynamics (in progress) | — |
+| 5 | Multi species dynamics  | — | `work in progress`
 
 ## What's worth a closer look
 
