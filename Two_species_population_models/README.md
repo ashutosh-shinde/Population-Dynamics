@@ -29,7 +29,7 @@ README
 - The Jacobian at $(N_1^ \ast, N_2^ \ast)$: (For stability analysis)
 
 $$\mathbf{J}_f (N_1^ \ast, N_2^ \ast) = \begin{bmatrix}
-      \frac{\partial f_1} {\partial N_1} & \frac{\partial f_1} {\partial N_2} \\[1ex]
+      \frac{\partial f_1} {\partial N_1} & \frac{\partial f_1} {\partial N_2} \\
       \frac{\partial f_2} {\partial N_1} & \frac{\partial f_2} {\partial N_2}
   \end{bmatrix}$$
 
@@ -236,7 +236,7 @@ $$\mathbf{J} =
 \begin{bmatrix} 
 r_1 \left(1 - \frac{(2N_1 + \alpha_{21}N_2)}{K_1}\right) 
 & -r_1\frac{ \alpha_{21}N_1}{K_1}
-\\[1ex]
+\\
 -r_2\frac{ \alpha_{12}N_2}{K_2}
 & r_2 \left(1 - \frac{(2N_2 + \alpha_{12}N_1)}{K_2}\right) 
 \end{bmatrix}$$
@@ -417,7 +417,7 @@ constant input rate $I$.
 
 So we have the following model :
 
-$$\dfrac{dR}{dt} = I - F(R, C)\\[1ex]
+$$\dfrac{dR}{dt} = I - F(R, C)\\
 \dfrac{dC}{dt} = \gamma \cdot F(R,C) - \delta C$$
 
 - Here $\gamma$ is conversion efficiency.
@@ -438,8 +438,8 @@ $$\dfrac{dR}{dt} = I - F(R, C)\\[1ex]
   response from scratch, using Time budget i.e. by considering
   `searching time` and `handling/eating time`. `work in progress`
 
-$$\dfrac{dR}{dt} = I - \beta_1 \dfrac{R}{R_{01} + R} C_1 - \beta_2 \dfrac{R}{R_{02} + R} C_2 \\[1ex]
-\dfrac{C_1}{dt} = \gamma_1 \beta_1 \dfrac{R}{R_{01} + R} C_1 - \delta_1 C_1 \\[1ex]
+$$\dfrac{dR}{dt} = I - \beta_1 \dfrac{R}{R_{01} + R} C_1 - \beta_2 \dfrac{R}{R_{02} + R} C_2 \\
+\dfrac{C_1}{dt} = \gamma_1 \beta_1 \dfrac{R}{R_{01} + R} C_1 - \delta_1 C_1 \\
 \dfrac{C_2}{dt} = \gamma_2 \beta_2 \dfrac{R}{R_{02} + R} C_2 - \delta_2 C_2 $$
 
 ------------------------------------------------------------------------
@@ -448,8 +448,8 @@ $$\dfrac{dR}{dt} = I - \beta_1 \dfrac{R}{R_{01} + R} C_1 - \beta_2 \dfrac{R}{R_{
 
 Solve : $\dot R = 0, \ \ \dot C_1 = 0, \ \ \dot C_2 = 0$
 
-$$R^ \ast \left( \dfrac{\beta_1 C_1}{R_{01} + R^ \ast} -  \dfrac{\beta_2 C_2 }{R_{02} + R^ \ast} \right) = I \\[1ex]
-C_1^ \ast \left(\gamma_1 \beta_1 \dfrac{R^ \ast}{R_{01} + R^ \ast} - \delta_1 \right) = 0 \\[1ex]
+$$R^ \ast \left( \dfrac{\beta_1 C_1}{R_{01} + R^ \ast} -  \dfrac{\beta_2 C_2 }{R_{02} + R^ \ast} \right) = I \\
+C_1^ \ast \left(\gamma_1 \beta_1 \dfrac{R^ \ast}{R_{01} + R^ \ast} - \delta_1 \right) = 0 \\
 C_2^ \ast \left(\gamma_2 \beta_2 \dfrac{R^ \ast}{R_{02} + R^ \ast} - \delta_2 \right) = 0$$
 
 > One shall solve this by hand to know what exactly going on here.
@@ -534,7 +534,7 @@ form of continuous prey-predator model can be written as
 > $\dfrac{dP}{dt} =$ conversion efficiency $\times$ Death rate due to
 > predation - Death rate of predators
 
-$$\dfrac{dN}{dt} = f(N) - h(N, P) \\[1ex]
+$$\dfrac{dN}{dt} = f(N) - h(N, P) \\
 \dfrac{dP}{dt} = \gamma h(N, P) - \delta(P)$$
 
 ------------------------------------------------------------------------
@@ -556,7 +556,7 @@ $$\dfrac{dN}{dt} = f(N) - h(N, P) \\[1ex]
 
 - $r, \beta, \gamma, \delta \gt 0$, otherwise NBS.
 
-$$\dfrac{dN}{dt} = r N - \beta N P \\[1ex]
+$$\dfrac{dN}{dt} = r N - \beta N P \\
 \dfrac{dP}{dt} = \gamma \beta N P - \delta P$$
 
 ##### **Fixed points:**
@@ -569,7 +569,7 @@ $$\dfrac{dN}{dt} = r N - \beta N P \\[1ex]
 
 $$\mathbf{J} = 
 \begin{bmatrix}
-r - \beta P  & -N\beta \\[1ex]
+r - \beta P  & -N\beta \\
 \gamma \beta P & \gamma \beta N - \delta
 \end{bmatrix}$$
 
@@ -613,7 +613,7 @@ for (eg in (examples)) {
 
 - rest it is same as LV model.
 
-$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta N P \\[1ex]
+$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta N P \\
 \dfrac{dP}{dt} = \gamma \beta N P - \delta P$$
 
 > The fixed points and Jacobian matrix are omitted here for brevity, as
@@ -664,7 +664,7 @@ for (eg in (examples)) {
 
 - $\delta(p) = \delta \cdot P$ : Constant per capita death rate.
 
-$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta \dfrac{NP}{N_0 + N} \\[1ex]
+$$\dfrac{dN}{dt} = r N\left( 1 - \frac{N}{K}\right) - \beta \dfrac{NP}{N_0 + N} \\
 \dfrac{dP}{dt} = \gamma \beta \dfrac{NP}{N_0 + N} - \delta P$$
 
 > The fixed points and Jacobian matrix are omitted here for brevity, as
@@ -716,10 +716,8 @@ for (eg in (examples)) {
 
   - `Low K` : Coexistence equilibrium is a **stable spiral**
 
-  - `Mid K` : Slow, barely-decaying oscillations. Eigenvalue real part ≈
-
-    0.  
-
+  - `Mid K` : Slow, barely-decaying oscillations.
+    - Eigenvalue real part ≈ 0.  
     - Technically neither stable nor unstable spiral.
     - Approaching the Hopf bifurcation.
 
