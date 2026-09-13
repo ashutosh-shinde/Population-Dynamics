@@ -254,10 +254,10 @@ r_1 \left(1 - \frac{(2N_1 + \alpha_{21}N_2)}{K_1}\right)
 **Overall biologically important possibilities of asymptotic stability
 are following :**
 
-<table style="width:96%;">
+<table style="width:94%;">
 <colgroup>
 <col style="width: 20%" />
-<col style="width: 40%" />
+<col style="width: 38%" />
 <col style="width: 34%" />
 </colgroup>
 <thead>
@@ -278,44 +278,41 @@ class="math inline"><em>r</em><sub>1</sub> &lt; 0, <em>r</em><sub>2</sub>�
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>1</sub></span></td>
-<td style="text-align: left;"><p><span
+<td style="text-align: left;"><span
 class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span>
-and</p>
-<p><span
-class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span></p></td>
+and <span
+class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span></td>
 <td style="text-align: left;">Species 1 excludes Species 2</td>
 </tr>
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>2</sub></span></td>
-<td style="text-align: left;"><p><span
+<td style="text-align: left;"><span
 class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span>
-and</p>
-<p><span
-class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span></p></td>
+and <span
+class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span></td>
 <td style="text-align: left;">Species 2 excludes Species 1</td>
 </tr>
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>3</sub></span></td>
-<td style="text-align: left;"><p><span
+<td style="text-align: left;"><span
 class="math inline"><em>K</em><sub>1</sub> &gt; <em>α</em><sub>21</sub><em>K</em><sub>2</sub></span>
-and</p>
-<p><span
-class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span></p></td>
+and <span
+class="math inline"><em>K</em><sub>2</sub> &gt; <em>α</em><sub>12</sub><em>K</em><sub>1</sub></span></td>
 <td style="text-align: left;">Stable coexistence</td>
 </tr>
 <tr>
 <td style="text-align: center;"><span
 class="math inline"><em>e</em><sub>1</sub>, <em>e</em><sub>2</sub></span></td>
-<td style="text-align: left;"><p><span
+<td style="text-align: left;"><span
 class="math inline"><em>α</em><sub>21</sub><em>K</em><sub>2</sub> &gt; <em>K</em><sub>1</sub></span>
-and</p>
-<p><span
-class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span></p></td>
+and <span
+class="math inline"><em>α</em><sub>12</sub><em>K</em><sub>1</sub> &gt; <em>K</em><sub>2</sub></span></td>
 <td style="text-align: left;"><p>Bistability / Founder effect</p>
-<p>(Initial conditions determines the winner; competitive advantage for
-larger population)</p></td>
+<p>(Initial conditions determines</p>
+<p>the winner; competitive</p>
+<p>advantage for larger population)</p></td>
 </tr>
 </tbody>
 </table>
