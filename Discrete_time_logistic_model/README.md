@@ -31,15 +31,10 @@ This is one of the simplest(!) model due to many underlying assumptions.
 - Non overlapping generations.
 
   - Each time step $T$ is a generation time.
-  - i.e. All individual at time $t$, reproduce and immediately die at
+  - i.e. All individual at time $t$, reproduce and immediately die at
     $t+T$.
   - No withing step reproduction of off springs.
-  - So individual at $t$ won’t be counted again at $t+T$ ; $d_t = 1$
-
-- Population is Homogeneous.
-
-  - No age, sex, spatial structures.
-  - All offspring survives and reproduce with same expected fecundity.
+  - So individual at $t$ won't be counted again at $t+T$ ; $d_t = 1$
 
 - Population is closed.
 
@@ -48,24 +43,17 @@ This is one of the simplest(!) model due to many underlying assumptions.
 
 - Logistic growth
 
-  - Growth rate $R_t$ decrease linearly with time.
+  - Growth rate $R_t$ decrease linearly with increasing $N_t$.
+  -  $$R_t = R_m \left( 1 - \frac{N_t}{K} \right)$$.
 
-- **Mean field**
+- Mean field
 
-  - $N_t$ is very large
-    <sub>(So we can apply law of large numbers to make underlying distribution structure immaterial).</sub>
-
-  <!-- -->
-
-  - $N_t$ represents **expected** population at time $t$, so
-    $N_t \in \mathbb{R}_{\ge 0}$
-
-  - Similarly $R_t$ is **expected** per capita growth rate at time $t$.
-    and $R_t \in \mathbb{R}_{\ge 0}$
-
-  - See last section
-    `Stochasticity and real world interpretations of the model` for more
-    details about underlying distributions and interpretations.
+  - Population is well-mixed and homogeneous (no age, sex, spatial structure).
+  - $N_t$ is very large <sub>(So we can apply law of large numbers to make underlying
+    distribution structure immaterial).</sub>
+  - $N_t$ represents expected population at time $t$, so $N_t \in \mathbb{R}_{\ge 0}$.
+  - $R_t$ is expected per capita growth rate at time $t$, and $R_t \in \mathbb{R}_{\ge 0}$ (valid when $N_t \le K$).
+  - See last section `Stochasticity and real world interpretations of the model` for more details.
 
 ------------------------------------------------------------------------
 
