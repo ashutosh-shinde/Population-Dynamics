@@ -36,7 +36,7 @@ bifurcation diagrams).**
   in the analysis.
 - **Two species models**: Holling type functional responses and
   predator prey dynamics. Multi species generalizations are
-  under progress.
+  in progress.
 
 ## On the theory
 
@@ -85,7 +85,7 @@ by hand.
 >   $E := \mathbb{R}_{\ge 0}$
 > - $n$ species: $E := \mathbb{R}_{\ge 0}^n$
 >
-> <sub>Note: Why not $E = \mathbb{Z}_{\ge 0}$? refer last section in
+> <sub>Note: Why not $E = \mathbb{Z}_{\ge 0}$? Refer to the last section in
 > `discrete_time_logistic_model`.</sub>
 
 #### **Dynamical functions :**
@@ -134,18 +134,18 @@ given initial conditions.
 
 **Trajectory and orbit :**
 
-> For a fixed initial condition $p_0 \in E$, trajectory through $p_0$ is
+> For a fixed initial condition $p_0 \in E$, the trajectory through $p_0$ is
 > a curve $\gamma_{p_0} : T \rightarrow E$, s.t.
-> $$\gamma_{p_0} (t) = \phi_t(p_0)$$ And its Image
+> $$\gamma_{p_0} (t) = \phi_t(p_0)$$ and its image
 > $\{ \phi_t(p_0) | t \in T \} \subset E$ is the corresponding orbit.
 
 **Parameter of dynamic function :**
 
 > A quantity $\mu$ (scalar or vector) that appears in the defining
 > equation $\dot x=f(x;\mu)$ <sub>or</sub> $x_{n+1}=f (x_n;\mu)$ but is
-> held fixed while the state $p$ evolves in time. e.g. max growth rate,
-> max harvesting rate etc. set $M \subset \mathbb{R}^d$ of all $\mu$ is
-> called parameter space.
+> held fixed while the state $p$ evolves in time. e.g. max growth rate,
+> max harvesting rate etc. The set $M \subset \mathbb{R}^d$ of all $\mu$ is
+> called the parameter space.
 
 ------------------------------------------------------------------------
 
@@ -169,18 +169,18 @@ $p^\ast$.
 > $\boxed{ |p_0 - p^\ast | \lt \delta \implies | p_t - p^\ast | \lt \varepsilon,
 > \forall t \ge 0}$
 
-> Small perturbation to $p^\ast$ stays small over the time.
+> Small perturbation to $p^\ast$ stays small over time.
 
 **Asymptotically stable :** Family $\{ \phi_t \}$ is Equicontinuous at
 point $p^\ast$ and converges pointwise to $p^\ast$.
 
-> $\boxed{\exists \delta_0 \ge 0 \text{ s.t. } |p_0 - p^\ast | \lt \delta_0
+> $\boxed{\exists \delta_0 \gt 0 \text{ s.t. } |p_0 - p^\ast | \lt \delta_0
 > \implies p_t \to p^\ast}$
 
 > Small perturbation to $p^\ast$ stays small and eventually dies out over
-> the time.
+> time.
 
-Note : Equilibrium is local attractor.
+Note : An asymptotically stable equilibrium is a local attractor.
 
 **Linear stability test :**
 
@@ -199,8 +199,8 @@ Note : Equilibrium is local attractor.
 > Let $J := Df(p^\ast)$ (Jacobian) and $\lambda_i$ be eigenvalues of $J$,
 > then
 > - $\text{Re}(\lambda_i) \lt 0, \ \ \text{for all } \lambda_i \implies p^\ast \text{ asymptotically stable}$
-> - $\text{Re}(\lambda_i) \lt 0, \ \ \text{for any } \lambda_i \implies p^\ast \text{ unstable}$
-> - $\text{Re}(\lambda_i) = 0, \ \ \text{for all } \lambda_i \implies \text{Inconclusive (possibly bifurcation point)}$
+> - $\text{Re}(\lambda_i) \gt 0, \ \ \text{for some } \lambda_i \implies p^\ast \text{ unstable}$
+> - $\text{Otherwise (no } \lambda_i \text{ with } \text{Re}(\lambda_i) \gt 0 \text{, but } \text{Re}(\lambda_i) = 0 \text{ for at least one } \lambda_i\text{)} \implies \text{Inconclusive (possibly bifurcation point)}$
 
 ------------------------------------------------------------------------
 
@@ -210,8 +210,8 @@ $\omega -$**limit set of** $p_0$ **:**
 
 > Set of all subsequential limits of the forward orbit of $p_0$.
 >
-> $\omega (p_0) = \\{ p \in E \ : \ \lim_{t_k \rightarrow \infty}
->     \omega_{t_k}(p_0)= p, \ \text{ for any subsequence } (t_k)_{k \ge 0}
+> $\omega (p_0) = \\{ p \in E \ : \ \lim_{k \rightarrow \infty}
+>     \phi_{t_k}(p_0)= p, \ \text{ for some sequence } t_k \rightarrow \infty, \ (t_k)_{k \ge 0}
 >     \subset T \\}$
 
 **Attracting Set** $A(\mu)$ **:**
@@ -219,16 +219,16 @@ $\omega -$**limit set of** $p_0$ **:**
 > A non empty closed set $A = A(\mu) \subset E$ is an attracting set if
 > 
 >- $A \text{ is invariant under } \phi_t \text{ i.e. } \phi_t (A) = A, \forall t$.
->- $\exists \text{ open } U, A \subset U \subset E, \text{ s.t. } \text{dist}( \phi_t (p_0), A) \rightarrow 0 \text{ as } t \rightarrow 0, \ \forall p_0 \in U$.
+>- $\exists \text{ open } U, A \subset U \subset E, \text{ s.t. } \text{dist}( \phi_t (p_0), A) \rightarrow 0 \text{ as } t \rightarrow \infty, \ \forall p_0 \in U$.
 >- $\forall \varepsilon \gt 0, \exists \delta \gt 0 \text{ s.t. } \text{dist}(p_0, A) \lt \delta \implies \text{dist}(\phi_t(p_0), A) \lt \varepsilon, \ \forall t \ge 0$.
 
 > $A(\mu)$ is an attractor if it is closed, invariant, Asymptotically
-> stable (i.e. attracting and Lyapunov stable) and minimal set of such
-> kind (no closed subset of A is attractor).
+> stable (i.e. attracting and Lyapunov stable) and a minimal set of such
+> kind (no closed subset of A is an attractor).
 
 > Here $\mu$ is a parameter value of the dynamic system
-> $\dot x = f (x; \mu)$. For different $\mu$ we have may different $A$,
-> $U$ structure even when the dynamic function has same form.
+> $\dot x = f (x; \mu)$. For different $\mu$ we may have different $A$,
+> $U$ structure even when the dynamic function has the same form.
 
 **Basin of Attractor :**
 
@@ -237,8 +237,9 @@ $\omega -$**limit set of** $p_0$ **:**
 
 **Attractor point:**
 
-> $a \in A(\mu)$ is an attractor point. \> Note: each
-> $a \in \omega(p_0)$ for some $p_0 \in U$ and for each
+> $a \in A(\mu)$ is an attractor point.
+>
+> Note: each $a \in \omega(p_0)$ for some $p_0 \in U$ and for each
 > $p_0 \in U, \ \omega(p_0) \subset A$.
 
 **Types of attractors** $A(\mu)$ **:**
@@ -246,7 +247,11 @@ $\omega -$**limit set of** $p_0$ **:**
 > **Fixed point :** $A = \{ p^\ast \}$ i.e. equilibrium.
 
 > **Periodic orbit :** $A = \tau$ : closed curve with
-> $\phi_T (p) = p, \ \forall p \in \tau$ : prey predator cycle etc.
+> $\phi_T (p) = p, \ \forall p \in \tau$ : isolated attracting limit cycle,
+> e.g. a predator-prey limit cycle arising after a Hopf bifurcation.
+> Note: the closed orbits of the classical Lotka-Volterra model are only
+> neutrally stable (Lyapunov stable but not attracting), so they are not
+> attractors in the above sense.
 
 > **Quasiperiodic attractor :** oscillation with no exact period and
 > dense orbit in A.
@@ -256,11 +261,11 @@ $\omega -$**limit set of** $p_0$ **:**
 **Bifurcation point :**
 
 > Critical threshold in a parameter (growth rate, harvesting rate,
-> infection rate etc.) where systems stability structure changes. (i.e.
+> infection rate etc.) where the system's stability structure changes. (i.e.
 > $A(\mu)$ changes in number, type or stability of attractors).
 
-> Let $M \subset \mathbb{R}^n$ be Parameter Space, $\mu_0 \in M$ is
-> bifurcation point of $f(p; \mu)$ if every neighborhood $N$ of $\mu_0$
+> Let $M \subset \mathbb{R}^d$ be the parameter space, $\mu_0 \in M$ is
+> a bifurcation point of $f(p; \mu)$ if every neighborhood $N$ of $\mu_0$
 > contains $\mu_1 , \mu_2$ s.t. no homeomorphism $h: E \rightarrow E$
 > maps orbits of $f(\cdot ; \mu_1)$ onto $f(\cdot; \mu_2)$ preserving
 > the orientation (time-direction).
@@ -281,7 +286,7 @@ $\omega -$**limit set of** $p_0$ **:**
 
 **Deterministic system :**
 
-> Initial condition $p_0$ uniquely determines entire future trajectory
+> Initial condition $p_0$ uniquely determines the entire future trajectory
 > $\phi_t(p_0)$. No stochasticity involved in the system.
 
 **Robustness :**
@@ -291,80 +296,92 @@ $\omega -$**limit set of** $p_0$ **:**
 
 **Predictability at** $p_0$ **:**
 
-If the measured initial condition has a small error $\delta_0$ can we
-determine how this error evolves over time? if small initial measurement
-error is forgiving i.e. it does not blow up into a large discrepancy, so
-the measured trajectory $\phi_t(x_0+\delta_0)$ remains a good
-approximation to the true trajectory $\phi_t(x_0)$. so we can still
-approximately predict future states of system. There are two distinct
-questions to focus. 1. Are our predictions valid in time window
-$[0, t^\ast]$ ? 2. Can we predict long run fate of system i.e. What happens
+Suppose the measured initial condition has a small error $\delta_0$. Can
+we determine how this error evolves over time? The error is forgiving
+if it does not blow up into a large discrepancy, i.e. the measured
+trajectory $\phi_t(p_0+\delta_0)$ remains a good approximation to the
+true trajectory $\phi_t(p_0)$; then we can still approximately predict
+future states of the system. There are two distinct questions to focus
+on. 1. Are our predictions valid in the time window
+$[0, t^\ast]$ ? 2. Can we predict the long run fate of the system i.e. what happens
 to $\delta(t)$ as $t \to\infty$ ; does it eventually decay, drift, or
-grow without bound? This asymptotic question is answered by the Lyapunov
+grow without bound? This asymptotic question is addressed by the Lyapunov
 exponent.
 
-> Let $p_0$ be true state and $p_0 + \delta_0$ be measured state, then
-> we Define error at time $t$ as
+> Let $p_0$ be the true state and $p_0 + \delta_0$ be the measured state, then
+> we define the error at time $t$ as
 > $$\delta(t) := \phi_t(p_0 + \delta_0) - \phi_t(p_0)$$
 
-$(\varepsilon_{\text{tol}}, t^*)-$**predictable at** $p_0$ **:**
+$(\xi, \varepsilon_{\text{tol}}, t^*)-$**predictable at** $p_0$ **:**
 
-> Let’s Fix tolerance $\varepsilon_\text{tol} \gt 0$ and predictability horizon $t^\ast \gt 0$. Define the system is
-> $(\varepsilon_\text{tol}, t^\ast)-predictable$ at $p_0$ if,
-> $$\exists \xi \gt 0 \text{ s.t. } \lVert \delta(0) \rVert \lt \xi \implies \lVert \delta(t) \rVert \lt \varepsilon_\text{tol}, \ \forall t \in [0, t^*]$$
+> Fix a measurement accuracy $\xi \gt 0$, a tolerance $\varepsilon_\text{tol} \gt 0$ and a predictability horizon $t^\ast \gt 0$. We say the system is
+> $(\xi, \varepsilon_\text{tol}, t^\ast)$-predictable at $p_0$ if,
+> $$\lVert \delta(0) \rVert \lt \xi \implies \lVert \delta(t) \rVert \lt \varepsilon_\text{tol}, \ \forall t \in [0, t^*]$$
 
-> Measurement error smaller than some threshold $\xi$ stays below the
+> A measurement error smaller than $\xi$ stays below the
 > tolerance $\varepsilon_{\text{tol}}$​ throughout the entire window
 > $[0,t^\ast]$.
 
+> Note: for a fixed $t^\ast$, continuous dependence on initial conditions
+> guarantees that *some* $\xi \gt 0$ always works, so the meaningful
+> question is how large $t^\ast$ can be for a given $\xi$ and
+> $\varepsilon_\text{tol}$.
+
 **Lyapunov exponent :**
 
-> Lets assume $\lVert \delta(t) \rVert \approx e^{ \lambda t} \lVert \delta(0) \rVert$ (by
-> linearization of first order taylor expansion (as $f$ is $C^1$) of $f$
+> Let us assume $\lVert \delta(t) \rVert \approx e^{ \lambda t} \lVert \delta(0) \rVert$ (by
+> linearization, i.e. a first-order Taylor expansion (as $f$ is $C^1$) of $f$
 > about $\phi_t(p_0)$.) This assumption is only valid on $[0, T]$ for
 > $T$ not too large relative to $\ln(1/ \lVert \delta(0) \rVert )$.
 >
-> Here $\lambda$ is called Lyapunov constant.
+> Here $\lambda$ is called the Lyapunov exponent.
 
-Now taking logarithm of both side we define it as:
+Now taking the logarithm of both sides we define it as:
 
 > **Maximal Lyapunov exponent :**\
-> $$\lambda(p_0) := \lim_{t \to \infty} \lim_{\lVert \delta(0) \rVert\to 0} {\dfrac{1}
-> {t}} {\ln{\dfrac{\lVert \delta(t) \rVert}{\lVert \delta(0) \rVert}}}$$
+> $$\lambda(p_0) := \limsup_{t \to \infty} \ \dfrac{1}{t} \ln \left( \lim_{r \to 0} \ \sup_{\lVert \delta(0) \rVert = r} \dfrac{\lVert \delta(t) \rVert}{r} \right)$$
 > 
->+ The limit $\lVert \delta(0) \rVert \to 0$ ensures validity of approximation at any
-time.
+>+ The limit $r \to 0$ ensures validity of the linear approximation at any
+time, and the supremum is taken over all perturbation directions
+(equivalently, $\lambda(p_0) = \limsup_{t \to \infty} \frac{1}{t} \ln \lVert D\phi_t(p_0) \rVert$).
 
 > Discrete time Lyapunov exponent :\
-> $$\lambda(x_0) := \lim_{n \to \infty } \frac{1}{n} \sum_{i = 0}^{n-1} \ln{|F'(p_i)|} $$
+> $$\lambda(p_0) := \lim_{n \to \infty } \frac{1}{n} \sum_{i = 0}^{n-1} \ln{|F'(p_i)|} $$
 
 **Lyapunov spectrum :**\
-In $n$-dimensional phase space, we have $n$-basis directions along which
+In $n$-dimensional phase space, we have $n$ basis directions along which
 we can make the perturbation in initial condition $p_0$ so we have $n$
 Lyapunov exponents $\{ \lambda_i \}_n$ for each basis direction. I will
-upload pdf regarding the choice of basis (which not even an fixed
-orthogonal basis as standard sense) .
+upload a PDF regarding the choice of basis (which is not even a fixed
+orthogonal basis in the standard sense).
 
 `Work in progress`
 
 **Cases of** $\lambda$ :
 
-> - $\lambda \lt 0$ : exponential decay of error in long run; but still
->   we can have transient spikes at some finite t. This is exactly why
->   $\lambda \lt 0$ does not imply Lyapunov stability in general.
+> - $\lambda \lt 0$ : exponential decay of error in the long run, although
+>   transient growth at finite $t$ is still possible. At an equilibrium,
+>   $\lambda \lt 0$ implies asymptotic stability. For a general trajectory,
+>   however, $\lambda \lt 0$ does not imply Lyapunov stability: $\lambda$
+>   describes only the evolution of infinitesimal perturbations, while
+>   Lyapunov stability concerns finite perturbations, where nonlinear
+>   effects can matter (see Ashwin & Timme below).
 >
 >
-> - $\lambda = 0$ : linear/polynomial drift between trajectories
->   i.e. phase/timing drift but no decay.
+> - $\lambda = 0$ : no exponential growth or decay of error. The
+>   error may drift (linear/polynomial growth, i.e. phase/timing drift),
+>   stay bounded, or even decay sub-exponentially (e.g. $\dot x = -x^3$ at
+>   $x = 0$).
 >
-> - $\lambda \gt 0$ : exponential growth of $\delta(t)$ (until gets
+> - $\lambda \gt 0$ : exponential growth of $\delta(t)$ (until it gets
 >   bounded by some attractor structure)
 
 **Predictability horizon for** $\lambda \gt 0$ **:**
-> Let $\varepsilon_{\text{tol}}$ be fixed tolerance and $\lVert \delta(t) \rVert$
-> be the error, then there exist predictability horizon $t^\ast$ s.t.
-> $\lVert \delta(t) \rVert \lt \varepsilon_\text{tol } \ \forall t \lt t^\ast$ ;
-> given by $t^\ast = \frac{1}{\lambda} \ln \frac{\varepsilon_\text{tol} }{ \lVert \delta(0) \rVert }$.
+> Let $\varepsilon_{\text{tol}}$ be a fixed tolerance and $\lVert \delta(t) \rVert$
+> be the error. Under the approximation $\lVert \delta(t) \rVert \approx e^{\lambda t} \lVert \delta(0) \rVert$,
+> the predictability horizon $t^\ast$ (the time at which
+> $\lVert \delta(t) \rVert$ first reaches $\varepsilon_\text{tol}$) is estimated as
+> $t^\ast = \frac{1}{\lambda} \ln \frac{\varepsilon_\text{tol} }{ \lVert \delta(0) \rVert }$.
 
 - Note: So, $\lambda \gt 0$ and $t^\ast$ tell you the average/eventual
   rate, they do not certify smooth monotonic growth of $\delta(t)$ up to
@@ -372,7 +389,8 @@ orthogonal basis as standard sense) .
 
 **Attractor structure :**
 
-> For fixed $\mu$, $E$ decomposes as
+> Assume the generic situation, e.g. a dissipative system with finitely many
+> asymptotically stable attractors and no riddled basins. Then for fixed $\mu$, $E$ decomposes as
 > $E = \left(\bigsqcup_i U_i\right)\sqcup\Sigma$, : disjoint open basins
 > $U_i$ of distinct minimal attractors $A_i(\mu)$ (possibly of different
 > types simultaneously i.e. multistability), plus a measure-zero
@@ -381,7 +399,12 @@ orthogonal basis as standard sense) .
 
 Note:
 
-- $A_i(\mu)$ need not be connected (e.g. period- $k$ points, multi-band
+- This decomposition does not hold in general. For example, the classical
+  Lotka-Volterra predator-prey system has only neutrally stable closed
+  orbits (no attractors, so no open basins), and riddled basins (Alexander
+  et al. below) are not open.
+
+- $A_i(\mu)$ need not be connected (e.g. period- $k$ points, multi-band
   chaotic attractors).
 
 -  $\mu_0$ is a bifurcation point if the collection $\{A_i(\mu)\}$
@@ -436,7 +459,7 @@ large transient excursions from non-normal dynamics.*</sub>
 characteristic numbers for dynamical systems,” Transactions of the
 Moscow Mathematical Society 19 (1968), 197–231. Establishes existence of
 the Lyapunov spectrum and the associated (Oseledets) eigenbasis almost
-everywhere — the theoretical basis for defining*
+everywhere — the theoretical basis for defining*</sub>
 $\lambda_1,\dots,\lambda_n$ <sub>*rigorously.*</sub>
 
 <sub>*Katok, A. & Hasselblatt, B. Introduction to the Modern Theory of
