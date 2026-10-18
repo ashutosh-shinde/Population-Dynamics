@@ -12,15 +12,16 @@
 ]
 
 
-\node[process] (A) {Dynamical system $\phi_t(p;\mu)$, deterministic};
+\node[process] (A) {Dynamical system $\phi_t(p;\mu)$, deterministic \\ (continuous time)};
 \node[process, below=of A] (B) {Fix $\mu$, vary $p_0 \in E$};
 \node[decision, below=of B] (C) {$p_0$ in basin $U_i$ of some attractor $A_i(\mu)$?};
 
-\node[process, right=3.2cm of C] (E) {Non-generic: saddle manifold / basin boundary};
+\node[process, right=3.2cm of C] (E) {Non-generic$^{*}$: saddle manifold / basin boundary};
+\node[font=\scriptsize, text width=4.6cm, align=left, below=0.4cm of E] (N) {$^{*}$Valid only if the attractors' basins cover almost all of $E$; \\ fails e.g. classical Lotka--Volterra.};
 \node[process, below=of C] (D) {$\omega(p_0) \subset A_i(\mu)$};
 
 \node[decision, below left=1.4cm and 3.0cm of D] (F) {Type of $A_i(\mu)$};
-\node[decision, below right=1.4cm and 3.2cm of D] (I) {Vary $\mu$: does $\{A_i(\mu)\}$ change type/number at $\mu_0$?};
+\node[decision, below right=1.4cm and 3.2cm of D] (I) {Vary $\mu$: does $\{A_i(\mu)\}$ change type/number/stability at $\mu_0$?};
 
 
 \node[process, below=1.6cm of F, xshift=-6cm] (F1) {Fixed point: all $\lambda_j<0$};
@@ -29,15 +30,15 @@
 \node[process, below=1.6cm of F, xshift=5.8cm, text width=3.0cm]  (F4) {Chaotic : at least one $\lambda_j > 0$};
 
 \node[process, below=1.1cm of F1] (G1) {Lyapunov stable + attracting = asymptotically stable};
-\node[process, below=1.1cm of F2, xshift=1.8cm] (G2) {Set-stable; pointwise phase drift (linear)};
-\node[process, below=1.1cm of F4] (G3) {Set $A_i$ bounded \& stable; unpredictable beyond $t^*$};
+\node[process, below=1.1cm of F2, xshift=1.8cm] (G2) {Set-stable; phase offset persists (no exp.\ growth or decay)};
+\node[process, below=1.1cm of F4] (G3) {Set $A_i$ bounded \& stable; unpredictable beyond estimated $t^*$};
 
 \node[process, below=1.0cm of G1] (H)  {Fully predictable};
-\node[process, below=1.0cm of G2] (H2) {Predictable up to phase drift};
-\node[process, below=1.0cm of G3] (H3) {Deterministic but unpredictable past $t^* = \tfrac{1}{\lambda}\ln(\varepsilon/\delta_0)$};
+\node[process, below=1.0cm of G2] (H2) {Predictable up to a persistent phase offset};
+\node[process, below=1.0cm of G3] (H3) {Deterministic but unpredictable past $t^* \approx \tfrac{1}{\lambda}\ln(\varepsilon/\delta_0)$};
 
 
-\node[process, below=1.6cm of I, xshift=-1.6cm, text width=2.8cm] (J) {$\mu_0$ is ROBUST (structurally stable)};
+\node[process, below=1.6cm of I, xshift=-1.6cm, text width=2.8cm] (J) {$\mu_0$ is ROBUST (not a bifurcation point)};
 \node[process, below=1.6cm of I, xshift=1.6cm, text width=2.8cm]  (K) {$\mu_0$ is a \\ BIFURCATION POINT};
 \node[process, below=1.3cm of K] (L) {Bifurcation diagram: $\{(\mu,p): p \in \bigcup_i A_i(\mu)\}$};
 
