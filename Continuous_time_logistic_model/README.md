@@ -17,7 +17,7 @@ Continuous_time_logistic_model
     for computations.
   - $b_t$ is per capita birth rate density at time $t$.
   - $b_t \Delta t$ is birth rate for the small interval $\Delta t$.
-  - similarly $d_t$ is per capita birth rate density.
+  - similarly $d_t$ is per capita death rate density.
 - Only births and deaths can change the population.
   - Therefore $r_t = b_t - d_t$ is growth rate at time $t$.
 - Growth rate decreases linearly as $N_t$ increases.
@@ -94,7 +94,7 @@ $$\boxed{\frac{d}{dt}x(t) = r_m x_t(1-x_t)}$$
 
 - $x^\ast = 0$ stable for $r_m \le 0$ otherwise unstable.
 
-- $x^\ast = K$ stable for $r_m \ge 0$ , and for $r_m < 0$, $K < 0$ is
+- $x^\ast = 1$ stable for $r_m \ge 0$ , and for $r_m < 0$, $K < 0$ is
   not even in state space so irrelavent here.
 
 ------------------------------------------------------------------------
