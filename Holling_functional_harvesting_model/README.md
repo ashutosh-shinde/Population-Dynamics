@@ -252,7 +252,8 @@ plot_bifurcation(f23, var_param = "h",
 
 Observations:
 
-- $h_c = \dfrac{(1+k)^2}{4k}$
+- $h_c = \dfrac{(1+k)^2}{4k} \ \ \text{ for } k \gt 1$
+- For $k \le 1$ the threshold is $h = 1$.
 
 ------------------------------------------------------------------------
 
@@ -292,6 +293,7 @@ for (i in 1:nrow(parameter_sets)) {
 
 **Observations : `work in progress`**
 
+-  Note: example $k = 5, \theta = 2$ has no tipping point but $k = 10$ does.
 - Due to we only detect roots when $f$ changes sign, the code is blind
   to tangential roots and I am working on it.
 
