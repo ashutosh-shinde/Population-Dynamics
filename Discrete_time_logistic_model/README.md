@@ -168,7 +168,7 @@ $$
 \begin{aligned} 
 |f'( X^\ast )| \lt 1 &\implies X^* \text{ is asymptotically stable. } \\ 
 |f'(X^\ast )| \gt 1 &\implies X^* \text{ is unstable.} \\
-|f'(X^\ast )| = 1 &\implies inconclusive. 
+|f'(X^\ast )| = 1 &\implies \text{ inconclusive.}
 \end{aligned}
 $$
 
@@ -176,7 +176,7 @@ $$
 #### Observations:
 
 - For $R_m \le 1$ we have stable equilibrium at $0$.
-- For $R_m \in (1, 2]$ we have unstable equilibrium at $0$.
+- For $R_m \in (1, 4]$ we have unstable equilibrium at $0$.
 - For $1 \lt R_m \lt 3$ gives stable equilibrium at $(1 - 1/R_m)$.
 - For $R_m = 3$, stability undetermined.
 
@@ -247,11 +247,11 @@ Plot_error_trajectories(X_0_list = c(0.1), R_m_list = c(0.5, 1.5, 2.5, 3.2, 3.6,
   ($\lambda \lt 0$) and basin of attractor is whole set $(0, 1)$ except
   $x_0 = 0, 1$.
 
-- For $3 \lt R_m \lt 3.5$ we have oscillating population i.e limit cycle
+- For $3 \lt R_m \lt 3.57$ we have oscillating population i.e limit cycle
   Attractor and we can see that errors are showing phase drift, so
-  population growth is predictable up to phase drift $(\lambda = 0)$
+  population growth is predictable up to phase drift $(\lambda \le 0)$
 
-- For $R_m >3$ we have chaos in the system and population is
+- For $R_m >3.57$ we have chaos in the system and population is
   unpredictable.
 
 - Note: For $R_m = 3.6$ in graph of $E_t$, Error trajectory of
